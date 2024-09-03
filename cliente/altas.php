@@ -26,6 +26,35 @@
     <a class="nav-link" href="calificaciones.php">Calificaciones</a>
   </li>
 </ul>
+<br><br>
+<h2>
+  Formulario de Altas
+</h2>
+<br><br>
+<div class="mb-3">
+  <label for="nombre" class="form-label">Nombre</label>
+  <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+</div>
+<div class="mb-3">
+  <label for="apellido" class="form-label">Apellido</label>
+  <input type="text" class="form-control" name="apellido" placeholder="nApellido">
+</div>
+<div class="mb-3">
+  <label for="dni" class="form-label">DNI</label>
+  <input type="text" class="form-control" name="dni" placeholder="DNI">
+</div>
+<div class="mb-3">
+  <label for="curso" class="form-label">Curso Asignado</label>
+  <input type="text" class="form-control" name="curso" placeholder="Curso Asignado">
+</div>
+<h3>Materias</h3>
+<?php 
+include("../modelo/materia.php");
+echo listarMaterias();
+?>
+
+
+
 </div>
 
 

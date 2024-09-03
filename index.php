@@ -26,6 +26,76 @@
     <a class="nav-link" href="#">Calificaciones</a>
   </li>
 </ul>
+<br><br>
+
+<h3>
+  Primerio A
+</h3>
+<br><br>
+
+<div class="row">
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-6 col-sm-3">
+      <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Jorge Fuentes</h5>
+        <p class="card-text">Curso asignado 4 A</p>
+        <h5 class="card-title">Materias</h5>
+        <p class="card-text"><small class="text-body-secondary">Lengua A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Matematica A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Historia A</small></p>
+        <p class="card-text"><small class="text-body-secondary">FEC A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Tecnologia A</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-6 col-sm-3">
+      <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Jorge Fuentes</h5>
+        <p class="card-text">Curso asignado 4 A</p>
+        <h5 class="card-title">Materias</h5>
+        <p class="card-text"><small class="text-body-secondary">Lengua A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Matematica A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Historia A</small></p>
+        <p class="card-text"><small class="text-body-secondary">FEC A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Tecnologia A</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-6 col-sm-3">
+      <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Jorge Fuentes</h5>
+        <p class="card-text">Curso asignado 4 A</p>
+        <h5 class="card-title">Materias</h5>
+        <p class="card-text"><small class="text-body-secondary">Lengua A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Matematica A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Historia A</small></p>
+        <p class="card-text"><small class="text-body-secondary">FEC A</small></p>
+        <p class="card-text"><small class="text-body-secondary">Tecnologia A</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
 </div>
 
 
