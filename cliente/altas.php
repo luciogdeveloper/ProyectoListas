@@ -53,7 +53,7 @@ include("../modelo/materia.php");
 echo listarMaterias();
 ?>
 
-
+<button type="submit" class="btn btn-success">Success</button><br><br>
 
 </div>
 

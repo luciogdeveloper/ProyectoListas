@@ -8,13 +8,12 @@ function listarMaterias(){
 
     $htmlListar = '<div class="row justify-content-start">';
     while($registro = mysqli_fetch_array($consulta)){
-        $htmlListar .= $htmlListar. '<div class="mb-3">
-  <label for="'.$registro[1].'" class="form-label">'.$registro[1].' Profesor: '.$registro[2].'</label>
-  <input type="checkbox" mane="'.$registro[1].'" value="'.$registro[0].'">
-  </div>';
+        $htmlListar = $htmlListar. '<div class="form-check form-check-inline col-4">
+  <input class="form-check-input" type="checkbox" value="'.$registro[0].'" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">'.$registro[1].'</label></div>';
     }
 
-    $htmlListar = $htmlListar. '</div>';
+    $htmlListar = $htmlListar. '</div><br><br>';
     return $htmlListar;
 }
 ?>
