@@ -30,70 +30,21 @@
 <br><br>
 
 <h3>
-  Primero A
+  Listar alumnos por materia
 </h3>
+<h2>
+  Seleccionar un materia
+</h2>
+<select class="selectMateria" class="form-select" multiple aria-label="Multiple select example">
+  <?php
+  include("modelo/materia.php");
+  echo listarMateriasBuscar();
+  ?>
+</select>
 <br><br>
 
-<div class="row">
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-6 col-sm-3">
-      <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Jorge Fuentes</h5>
-        <p class="card-text">Curso asignado 4 A</p>
-        <h5 class="card-title">Materias</h5>
-        <p class="card-text"><small class="text-body-secondary">Lengua A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Matematica A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Historia A</small></p>
-        <p class="card-text"><small class="text-body-secondary">FEC A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Tecnologia A</small></p>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="row" id="lista">
 
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-6 col-sm-3">
-      <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Jorge Fuentes</h5>
-        <p class="card-text">Curso asignado 4 A</p>
-        <h5 class="card-title">Materias</h5>
-        <p class="card-text"><small class="text-body-secondary">Lengua A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Matematica A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Historia A</small></p>
-        <p class="card-text"><small class="text-body-secondary">FEC A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Tecnologia A</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-6 col-sm-3">
-      <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Jorge Fuentes</h5>
-        <p class="card-text">Curso asignado 4 A</p>
-        <h5 class="card-title">Materias</h5>
-        <p class="card-text"><small class="text-body-secondary">Lengua A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Matematica A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Historia A</small></p>
-        <p class="card-text"><small class="text-body-secondary">FEC A</small></p>
-        <p class="card-text"><small class="text-body-secondary">Tecnologia A</small></p>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div>
 
@@ -101,7 +52,7 @@
 
 
 
-
+<script src="cliente/js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

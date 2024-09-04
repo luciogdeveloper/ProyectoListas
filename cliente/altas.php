@@ -31,6 +31,7 @@
   Formulario de Altas
 </h2>
 <br><br>
+<form action="../server/altas.php" method="post">
 <div class="mb-3">
   <label for="nombre" class="form-label">Nombre</label>
   <input type="text" class="form-control" name="nombre" placeholder="Nombre">
@@ -55,6 +56,7 @@ echo listarMaterias();
 
 <button type="submit" class="btn btn-success">Success</button><br><br>
 
+</form>
 </div>
 
 
