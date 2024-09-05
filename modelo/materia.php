@@ -11,7 +11,6 @@ function listarMateriasBuscar(){
         $htmlListar = $htmlListar. '<option value="'.$registro[0].'">'.$registro[1].'</option>';
     }
 
-    $htmlListar = $htmlListar. '</div><br><br>';
     return $htmlListar;
 }
 
@@ -43,13 +42,12 @@ function listarMateriasAlu($id){
 
     $consulta = mysqli_query($Conexion, $cadena);
 
-    $htmlListar = '<div class="row justify-content-start">';
+    $array = array();
     while($registro = mysqli_fetch_array($consulta)){
-        $htmlListar = $htmlListar. '<p class="card-text"><small class="text-body-secondary" style="font-weight:bold">'.$registro[0].'<small> Docente: '.$registro[1].'</small></small></p>';
+        array_push($array, array('nombre' => $registro[0], 'docente' => $registro[1]));    
     }
 
-    $htmlListar = $htmlListar. '</div><br><br>';
-    return $htmlListar;
+    return $array;
 }
 
 

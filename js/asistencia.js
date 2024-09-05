@@ -1,10 +1,10 @@
 let selectedModificar = document.querySelector(".selectMateria");
-selectedModificar.addEventListener("change", function (e) {
+selectedModificar.addEventListener("change", async function (e) {
   let id_materia = e.target.selectedOptions[0].value;
-  fetch("../../server/peticiones/alumnosMaterias.php", {
+ await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnosMateria.php', {
     method: "POST",
     body: JSON.stringify({
-      solicitud: id_materia,
+      "solicitud": id_materia
     }),
     headers: {
       "Content-Type": "application/json",
@@ -21,13 +21,10 @@ selectedModificar.addEventListener("change", function (e) {
                 <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body div">
                   <h5 class="card-title">${json[i].apellido} ${json[i].nombre}</h5>
+                  <p class="card-text">DNI ${json[i].dni}</p>
                   <p class="card-text">Curso asignado ${json[i].curso}</p>
-                  <h5 class="card-title">Materias</h5>
-                  <?php 
-                  echo listarMateriasAlu(${json[i].id})
-                  ?>
                 </div>
               </div>
             </div>
@@ -36,3 +33,4 @@ selectedModificar.addEventListener("change", function (e) {
         div.innerHTML = html;
     });
 });
+

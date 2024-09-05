@@ -30,13 +30,13 @@ function listarAlumno($id_materia){
     INNER JOIN alumno AS alumno ON alumno.id_alumno = cursa.id_alumno WHERE materia.id_materia =".$id_materia;
     
     $consulta = mysqli_query($Conexion, $cadena_alumno);
-
     $array = array();
     while($registro = mysqli_fetch_array($consulta)){
         array_push($array, array('id' => $registro[0], 'apellido' => $registro[1], 'nombre' => $registro[2], 'dni' => $registro[3], 'curso' => $registro[4]));
     }
     return $array;
 }
+
 
 
 ?>

@@ -35,7 +35,7 @@
 <h2>
   Seleccionar un materia
 </h2>
-<select class="selectMateria" class="form-select" multiple aria-label="Multiple select example">
+<select class="form-select selectMateria" multiple aria-label="Multiple select example">
   <?php
   include("modelo/materia.php");
   echo listarMateriasBuscar();
@@ -52,7 +52,7 @@
 
 
 
-<script src="cliente/js/index.js"></script>
+<script src="js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

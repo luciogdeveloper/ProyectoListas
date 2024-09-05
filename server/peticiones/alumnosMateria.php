@@ -5,5 +5,5 @@ if ($json['solicitud']) {
     $id_materia = $json['solicitud'];
     $respuesta = listarAlumno($id_materia);
 }
-echo json_encode($respuesta, true);
+echo json_encode($respuesta);
 ?>
