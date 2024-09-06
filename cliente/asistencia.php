@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turno Noche Alumnos</title>
+    <link rel="shortcut icon" href="../img/icono.jfif" style="border-radius:5px" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="../css/asistencia.css">
+  </head>
 <body>
 <div class="container">
-<h3 style="text-align: end">
-  Lisceo 8 Turno Noche
+<h3 class="selectTExt" style="text-align: end">
+  Liceo 8 Turno Noche
   <small class="text-muted">Alumnos</small>
 </h3>
 <ul class="nav nav-tabs">
@@ -26,36 +28,49 @@
     <a class="nav-link" href="calificaciones.php">Calificaciones</a>
   </li>
 </ul>
-</div>
 <br><br>
-<div class="container">
+
+<h3 class="selectTExt">
+  Seleccionar un materia
+</h3>
+<select class="form-select selectMateria" multiple aria-label="Multiple select example">
+  <?php
+  include("../modelo/materia.php");
+  echo listarMateriasBuscar();
+  ?>
+</select>
+<br><br>
+<div class="form-check">
+  <input onclick="cambiarCalendario()" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  Primer Cuatrimestre
+  </label>
+</div>
+<div class="form-check">
+  <input onclick="cambiarCalendario()" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+  <label class="form-check-label" for="flexRadioDefault2">
+   Segundo Cuatrimestre
+  </label>
+</div><br><br>
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Alumnos</th>
+      <th scope="col" class="mes1">Febrero</th>
+      <th scope="col" class="mes2">Marzo</th>
+      <th scope="col" class="mes3">Abril</th>
+      <th scope="col" class="mes4">Mayo</th>
+      <th scope="col" class="mes5">Junio</th>
+      <th scope="col" class="mes6">Julio</th>
     </tr>
   </thead>
   <tbody class="cuerpoTable">
     
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
   </tbody>
 </table>
 
-
+<script src="../js/asistencia.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

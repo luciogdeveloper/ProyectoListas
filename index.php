@@ -21,10 +21,10 @@
     <a class="nav-link" href="cliente/altas.php">Altas</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Asistencia</a>
+    <a class="nav-link" href="cliente/asistencia.php">Asistencia</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Calificaciones</a>
+    <a class="nav-link" href="cliente/Calificaciones.php">Calificaciones</a>
   </li>
 </ul>
 <br><br>

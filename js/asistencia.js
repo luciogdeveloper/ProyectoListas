@@ -12,25 +12,68 @@ selectedModificar.addEventListener("change", async function (e) {
   })
     .then((res) => res.json())
     .then(function (json) {
-        let div = document.querySelector("#lista")
+        let div = document.querySelector(".cuerpoTable")
         let html = ``;
         for (let i = 0; i < json.length; i++) {
-            html += `<div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-6 col-sm-3">
-                <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body div">
-                  <h5 class="card-title">${json[i].apellido} ${json[i].nombre}</h5>
-                  <p class="card-text">DNI ${json[i].dni}</p>
-                  <p class="card-text">Curso asignado ${json[i].curso}</p>
-                </div>
-              </div>
-            </div>
-          </div>`;
+            html += `<tr class="fila">
+      <th scope="row">${i+1}</th>
+      <td class="alumnos">${json[i].apellido} ${json[i].nombre} <small class="text-muted">${json[i].curso}</small></td>
+      <td class="ponerBorde">
+     
+      </td>
+      <td class="ponerBorde">
+      
+      </td>
+      <td class="ponerBorde">
+      
+      </td>
+      <td class="ponerBorde">
+      
+      </td>
+      <td class="ponerBorde">
+      
+      </td>
+      <td class="ponerBorde">
+      
+      </td>
+    </tr>`;
         }
         div.innerHTML = html;
     });
 });
+
+function cambiarCalendario() {
+  valorActivo = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+  if (valorActivo == 1) {
+    let thtag1 = document.querySelector(".mes1");
+    let thtag2 = document.querySelector(".mes2");
+    let thtag3 = document.querySelector(".mes3");
+    let thtag4 = document.querySelector(".mes4");
+    let thtag5 = document.querySelector(".mes5");
+    let thtag6 = document.querySelector(".mes6");
+
+    thtag1.innerText = "Febrero";
+    thtag2.innerText = "Marzo";
+    thtag3.innerText = "Abril";
+    thtag4.innerText = "Mayo";
+    thtag5.innerText = "junio";
+    thtag6.innerText = "julio";
+  } else if (valorActivo == 2){
+    let thtag1 = document.querySelector(".mes1");
+    let thtag2 = document.querySelector(".mes2");
+    let thtag3 = document.querySelector(".mes3");
+    let thtag4 = document.querySelector(".mes4");
+    let thtag5 = document.querySelector(".mes5");
+    let thtag6 = document.querySelector(".mes6");
+
+    thtag1.innerText = "Julio";
+    thtag2.innerText = "Agosto";
+    thtag3.innerText = "Septiembre";
+    thtag4.innerText = "Octubre";
+    thtag5.innerText = "Noviembre";
+    thtag6.innerText = "Diviembre";
+  }
+}
+
+
 

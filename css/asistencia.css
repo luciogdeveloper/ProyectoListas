@@ -1,0 +1,48 @@
+
+@media print and (orientation: landscape){
+    @page {
+        margin:1cm;
+        width: 21cm;
+        height: 28cm;
+    }
+    .container{
+        padding: 0cm;
+        margin: 0cm;
+    }
+    .selectTExt{
+        display: none;
+        height: 0cm;
+    }
+    .selectMateria{
+        display: none;
+        height: 0cm;
+    }
+    .form-check{
+        display: none;
+        height: 0cm;
+    }
+    .nav{
+        display: none;
+        height: 0cm;
+    }
+    .table{
+        padding: 0cm;
+        margin: 0cm;
+        width: 26cm;
+        border: 1px solid black;
+    }
+    .ponerBorde{
+        border: 1px solid black;
+        height: 0.7cm;
+        width: 3.33cm;
+    }
+    .alumnos{
+        width: 5cm;
+    }
+    .dias{
+        border: 0.5px solid black;
+        height: 0.7;
+        display: flex;
+    }
+
+}

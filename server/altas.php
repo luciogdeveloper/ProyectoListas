@@ -8,6 +8,7 @@ $materia = $_POST["materia"];
 include("../modelo/alumno.php");
 $resul = insertar( $apellido,$nombre, $dni,$curso, $materia);
 
-echo $resul;
+header("refresh:5;url=../cliente/altas.php");
+exit();
 
 ?>
