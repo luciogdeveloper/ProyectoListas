@@ -12,9 +12,9 @@
 <body>
 <div class="container">
 <br>
-  <div class="logo"">
+  <div class="logo">
   <img src="../img/logoLiceo.png" alt="">
-  </div><br><br>
+  </div>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link" href="../index.php">Inicio</a>
@@ -56,14 +56,21 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <th scope="col" colspan="32">Liceo N° 8 D.E N° 13 Esteban Echeverria</th>
+    </tr>
+    <tr>
+      <th scope="col" colspan="12">Asignatura: <small class="asignatura"></small></th>
+      <th scope="col" colspan="20">Docente: <small class="docente"></small></th>
+    </tr>
+    <tr>
       <th scope="col">#</th>
-      <th scope="col">Alumnos</th>
-      <th scope="col" class="mes1">Febrero</th>
-      <th scope="col" class="mes2">Marzo</th>
-      <th scope="col" class="mes3">Abril</th>
-      <th scope="col" class="mes4">Mayo</th>
-      <th scope="col" class="mes5">Junio</th>
-      <th scope="col" class="mes6">Julio</th>
+      <th scope="col">Registro de Asistencia</th>
+      <th scope="col" colspan="5" class="mes">Febrero</th>
+      <th scope="col" colspan="5" class="mes">Marzo</th>
+      <th scope="col" colspan="5" class="mes">Abril</th>
+      <th scope="col" colspan="5" class="mes">Mayo</th>
+      <th scope="col" colspan="5" class="mes">Junio</th>
+      <th scope="col" colspan="5" class="mes">Julio</th>
     </tr>
   </thead>
   <tbody class="cuerpoTable">

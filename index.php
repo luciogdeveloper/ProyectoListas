@@ -13,7 +13,7 @@
   <br>
   <div class="logo"">
   <img src="img/logoLiceo.png" alt="">
-  </div><br><br>
+  </div>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">Inicio</a>

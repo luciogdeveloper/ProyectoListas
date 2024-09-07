@@ -9,6 +9,9 @@
         padding: 0cm;
         margin: 0cm;
     }
+    .logo{
+        display: none;
+    }
     .selectTExt{
         display: none;
         height: 0cm;
@@ -30,19 +33,19 @@
         margin: 0cm;
         width: 26cm;
         border: 1px solid black;
+        text-align: center;
     }
     .ponerBorde{
         border: 1px solid black;
         height: 0.7cm;
-        width: 3.33cm;
+        width: 0.5cm;
     }
     .alumnos{
-        width: 5cm;
+        width: 6cm;
     }
-    .dias{
-        border: 0.5px solid black;
-        height: 0.7;
-        display: flex;
+    .mes{
+        border-left: 1px solid black;
+        border-right: 1px solid black;
     }
 
 }

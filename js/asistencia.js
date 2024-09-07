@@ -1,6 +1,11 @@
 let selectedModificar = document.querySelector(".selectMateria");
 selectedModificar.addEventListener("change", async function (e) {
   let id_materia = e.target.selectedOptions[0].value;
+  let materia = e.target.selectedOptions[0].label;
+  console.dir(e.target.selectedOptions[0]);
+  let outputMateria = document.querySelector(".asignatura");
+  let outputDocente = document.querySelector(".asignatura");
+  let docente = document.querySelector(".docente");
  await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnosMateria.php', {
     method: "POST",
     body: JSON.stringify({
@@ -13,32 +18,78 @@ selectedModificar.addEventListener("change", async function (e) {
     .then((res) => res.json())
     .then(function (json) {
         let div = document.querySelector(".cuerpoTable")
-        let html = ``;
+        let html = `<td class="ponerBorde"></td>
+      <th class="ponerBorde">Alumnos</th>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+    </tr>`;
         for (let i = 0; i < json.length; i++) {
             html += `<tr class="fila">
       <th scope="row">${i+1}</th>
       <td class="alumnos">${json[i].apellido} ${json[i].nombre} <small class="text-muted">${json[i].curso}</small></td>
-      <td class="ponerBorde">
-     
-      </td>
-      <td class="ponerBorde">
-      
-      </td>
-      <td class="ponerBorde">
-      
-      </td>
-      <td class="ponerBorde">
-      
-      </td>
-      <td class="ponerBorde">
-      
-      </td>
-      <td class="ponerBorde">
-      
-      </td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
     </tr>`;
         }
         div.innerHTML = html;
+        outputMateria.innerHTML = materia;
+        outputDocente.innerText = "";
     });
 });
 

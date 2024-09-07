@@ -8,7 +8,7 @@ function listarMateriasBuscar(){
 
     $htmlListar = '<option selected></option>';
     while($registro = mysqli_fetch_array($consulta)){
-        $htmlListar = $htmlListar. '<option value="'.$registro[0].'">'.$registro[1].'</option>';
+        $htmlListar = $htmlListar. '<option value="'.$registro[0].'" role="'.$registro[2].'">'.$registro[1].'</option>';
     }
 
     return $htmlListar;
