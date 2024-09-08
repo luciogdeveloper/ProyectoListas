@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-09-2024 a las 13:32:49
+-- Tiempo de generación: 08-09-2024 a las 02:54:17
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -47,7 +47,13 @@ INSERT INTO `alumno` (`id_alumno`, `apellido`, `nombre`, `dni`, `curso_asignado`
 (24, 'Duran', 'Angel', '94658494', '2 B'),
 (25, 'Ortis', 'Adriel', '25321789', '4 A'),
 (26, 'Gomez', 'Vitalia', '19062999', '3 B'),
-(27, 'Miranda', 'Vitalia', '93249966', '3 B');
+(27, 'Miranda', 'Vitalia', '93249966', '3 B'),
+(28, 'Miranda', 'Brisa', '78124512', '2 B'),
+(29, 'Roriguez', 'Yisiano', '12456123', '2 B'),
+(30, 'Mamani', 'Daniel', '87456123', '1 B'),
+(31, 'Molina', 'Dante', '12456987', '4 A'),
+(32, 'Leyes', 'Jorge', '25369741', '2 A'),
+(33, 'Fleitas', 'Omar', '98456147', '2 B');
 
 -- --------------------------------------------------------
 
@@ -100,7 +106,37 @@ INSERT INTO `cursa` (`id_cursa`, `id_alumno`, `id_materia`) VALUES
 (35, 27, 5),
 (36, 27, 7),
 (37, 27, 9),
-(38, 27, 11);
+(38, 27, 11),
+(39, 28, 8),
+(40, 28, 9),
+(41, 28, 19),
+(42, 28, 22),
+(43, 29, 3),
+(44, 29, 6),
+(45, 29, 9),
+(46, 29, 16),
+(47, 29, 22),
+(48, 30, 3),
+(49, 30, 10),
+(50, 30, 17),
+(51, 30, 20),
+(52, 30, 21),
+(53, 31, 2),
+(54, 31, 3),
+(55, 31, 10),
+(56, 31, 14),
+(57, 31, 17),
+(58, 31, 21),
+(59, 32, 1),
+(60, 32, 3),
+(61, 32, 8),
+(62, 32, 11),
+(63, 32, 18),
+(64, 33, 2),
+(65, 33, 3),
+(66, 33, 8),
+(67, 33, 11),
+(68, 33, 16);
 
 -- --------------------------------------------------------
 
@@ -174,13 +210,13 @@ ALTER TABLE `materia`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `cursa`
 --
 ALTER TABLE `cursa`
-  MODIFY `id_cursa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_cursa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
