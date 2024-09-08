@@ -2,10 +2,9 @@ let selectedModificar = document.querySelector(".selectMateria");
 selectedModificar.addEventListener("change", async function (e) {
   let id_materia = e.target.selectedOptions[0].value;
   let materia = e.target.selectedOptions[0].label;
-  console.dir(e.target.selectedOptions[0]);
+  let docenteElegido = e.target.selectedOptions[0].className;
   let outputMateria = document.querySelector(".asignatura");
-  let outputDocente = document.querySelector(".asignatura");
-  let docente = document.querySelector(".docente");
+  let outputDocente = document.querySelector("#docente");
  await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnosMateria.php', {
     method: "POST",
     body: JSON.stringify({
@@ -18,7 +17,7 @@ selectedModificar.addEventListener("change", async function (e) {
     .then((res) => res.json())
     .then(function (json) {
         let div = document.querySelector(".cuerpoTable")
-        let html = `<td class="ponerBorde"></td>
+        let html = `<tr><td class="ponerBorde"></td>
       <th class="ponerBorde">Alumnos</th>
       <td class="ponerBorde"></td>
       <td class="ponerBorde"></td>
@@ -54,7 +53,7 @@ selectedModificar.addEventListener("change", async function (e) {
         for (let i = 0; i < json.length; i++) {
             html += `<tr class="fila">
       <th scope="row">${i+1}</th>
-      <td class="alumnos">${json[i].apellido} ${json[i].nombre} <small class="text-muted">${json[i].curso}</small></td>
+      <td class="alumnos"> ${json[i].apellido} ${json[i].nombre} <small class="text-muted">${json[i].curso}</small></td>
       <td class="ponerBorde"></td>
       <td class="ponerBorde"></td>
       <td class="ponerBorde"></td>
@@ -87,9 +86,47 @@ selectedModificar.addEventListener("change", async function (e) {
       <td class="ponerBorde"></td>
     </tr>`;
         }
+        let aux = json.length+1;
+        while (aux <= 25) {
+          html += `<tr class="fila">
+      <th scope="row">${aux}</th>
+      <th class="ponerBorde"></th>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+      <td class="ponerBorde"></td>
+    </tr>`;
+    aux++;
+        }
         div.innerHTML = html;
-        outputMateria.innerHTML = materia;
-        outputDocente.innerText = "";
+        outputMateria.innerHTML = " "+materia;
+        outputDocente.innerText = " "+docenteElegido;
     });
 });
 
