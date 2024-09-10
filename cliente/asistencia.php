@@ -45,7 +45,7 @@
   <input onclick="cambiarCalendario()" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
   Primer Cuatrimestre
-  </label>
+  </label>r
 </div>
 <div class="form-check">
   <input onclick="cambiarCalendario()" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">

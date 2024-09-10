@@ -47,6 +47,14 @@
   <input type="text" class="form-control" name="dni" placeholder="DNI" required>
 </div>
 <div class="mb-3">
+  <label for="mail" class="form-label">E-mail</label>
+  <input type="email" class="form-control" name="mail" placeholder="E-mail">
+</div>
+<div class="mb-3">
+  <label for="telefono" class="form-label">Telefono</label>
+  <input type="text" class="form-control" name="telefono" placeholder="Telefono">
+</div>
+<div class="mb-3">
   <label for="curso" class="form-label">Curso Asignado</label>
   <select class="form-select" name="curso" aria-label="Default select example" required>
   <option value="" selected>Selecciona un curso</option>

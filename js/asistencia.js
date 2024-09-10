@@ -87,7 +87,7 @@ selectedModificar.addEventListener("change", async function (e) {
     </tr>`;
         }
         let aux = json.length+1;
-        while (aux <= 25) {
+        while (aux <= 24) {
           html += `<tr class="fila">
       <th scope="row">${aux}</th>
       <th class="ponerBorde"></th>

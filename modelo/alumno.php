@@ -1,10 +1,10 @@
 <?php
-function insertar( $ape,$nom, $dni,$curso, $materia)
+function insertar( $ape,$nom, $dni,$mail,$telefono,$curso, $materia)
 {
    
         $Conexion = include("conexion.php");
 
-        $cadena = "INSERT INTO alumno(apellido,nombre,dni,curso_asignado) VALUES ('$ape','$nom','$dni','$curso')";
+        $cadena = "INSERT INTO alumno(apellido,nombre,dni,mail,telefono,curso_asignado) VALUES ('$ape','$nom','$dni','$mail','$telefono','$curso')";
         
 
         try {

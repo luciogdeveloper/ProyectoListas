@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-09-2024 a las 02:54:17
+-- Tiempo de generación: 10-09-2024 a las 03:05:26
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -32,6 +32,8 @@ CREATE TABLE `alumno` (
   `apellido` varchar(50) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `dni` varchar(50) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
   `curso_asignado` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -39,21 +41,24 @@ CREATE TABLE `alumno` (
 -- Volcado de datos para la tabla `alumno`
 --
 
-INSERT INTO `alumno` (`id_alumno`, `apellido`, `nombre`, `dni`, `curso_asignado`) VALUES
-(18, 'Gayoso', 'Lucio', '19062999', '4 A'),
-(21, 'Miranda', 'Vitalia', '93249966', '4 B'),
-(22, 'Gomez', 'Andres', '22048546', '2 B'),
-(23, 'Miranda', 'Santi', '56887385', '1 B'),
-(24, 'Duran', 'Angel', '94658494', '2 B'),
-(25, 'Ortis', 'Adriel', '25321789', '4 A'),
-(26, 'Gomez', 'Vitalia', '19062999', '3 B'),
-(27, 'Miranda', 'Vitalia', '93249966', '3 B'),
-(28, 'Miranda', 'Brisa', '78124512', '2 B'),
-(29, 'Roriguez', 'Yisiano', '12456123', '2 B'),
-(30, 'Mamani', 'Daniel', '87456123', '1 B'),
-(31, 'Molina', 'Dante', '12456987', '4 A'),
-(32, 'Leyes', 'Jorge', '25369741', '2 A'),
-(33, 'Fleitas', 'Omar', '98456147', '2 B');
+INSERT INTO `alumno` (`id_alumno`, `apellido`, `nombre`, `dni`, `mail`, `telefono`, `curso_asignado`) VALUES
+(18, 'Gayoso', 'Lucio', '19062999', '', '', '4 A'),
+(21, 'Miranda', 'Vitalia', '93249966', '', '', '4 B'),
+(22, 'Gomez', 'Andres', '22048546', '', '', '2 B'),
+(23, 'Miranda', 'Santi', '56887385', '', '', '1 B'),
+(24, 'Duran', 'Angel', '94658494', '', '', '2 B'),
+(25, 'Ortis', 'Adriel', '25321789', '', '', '4 A'),
+(26, 'Gomez', 'Vitalia', '19062999', '', '', '3 B'),
+(27, 'Miranda', 'Vitalia', '93249966', '', '', '3 B'),
+(28, 'Miranda', 'Brisa', '78124512', '', '', '2 B'),
+(29, 'Roriguez', 'Yisiano', '12456123', '', '', '2 B'),
+(30, 'Mamani', 'Daniel', '87456123', '', '', '1 B'),
+(31, 'Molina', 'Dante', '12456987', '', '', '4 A'),
+(32, 'Leyes', 'Jorge', '25369741', '', '', '2 A'),
+(33, 'Fleitas', 'Omar', '98456147', '', '', '2 B'),
+(34, 'Abreu', 'dani', '4343466436', '', '', '3 B'),
+(35, 'Abreu', 'dani', '43434543', '', '', '3 B'),
+(36, 'Mamani', 'Gerson', '43434543', 'gerson@gmail.com', '', '1 A');
 
 -- --------------------------------------------------------
 
@@ -136,7 +141,20 @@ INSERT INTO `cursa` (`id_cursa`, `id_alumno`, `id_materia`) VALUES
 (65, 33, 3),
 (66, 33, 8),
 (67, 33, 11),
-(68, 33, 16);
+(68, 33, 16),
+(69, 34, 6),
+(70, 34, 10),
+(71, 34, 13),
+(72, 34, 15),
+(73, 34, 21),
+(74, 35, 5),
+(75, 35, 9),
+(76, 35, 11),
+(77, 35, 13),
+(78, 36, 1),
+(79, 36, 10),
+(80, 36, 13),
+(81, 36, 14);
 
 -- --------------------------------------------------------
 
@@ -210,13 +228,13 @@ ALTER TABLE `materia`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `cursa`
 --
 ALTER TABLE `cursa`
-  MODIFY `id_cursa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id_cursa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
