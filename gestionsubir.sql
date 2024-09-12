@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2024 a las 03:05:26
+-- Tiempo de generación: 11-09-2024 a las 14:03:29
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -165,36 +165,134 @@ INSERT INTO `cursa` (`id_cursa`, `id_alumno`, `id_materia`) VALUES
 CREATE TABLE `materia` (
   `id_materia` int(11) NOT NULL,
   `nombre_materia` varchar(50) NOT NULL,
-  `docente` varchar(50) NOT NULL
+  `curso` varchar(50) NOT NULL,
+  `divicion` varchar(50) NOT NULL,
+  `doble` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `materia`
 --
 
-INSERT INTO `materia` (`id_materia`, `nombre_materia`, `docente`) VALUES
-(1, 'Matemática A', 'Lopez Andres'),
-(2, 'Matemática B', 'Lopez Andres'),
-(3, 'Lengua A', 'Lopez Andres'),
-(4, 'Lengua B', 'Lopez Andres'),
-(5, 'Historia A', 'Lopez Andres'),
-(6, 'Historia B', 'Lopez Andres'),
-(7, 'FEC A', 'Lopez Andres'),
-(8, 'FEC B', 'Lopez Andres'),
-(9, 'Ingles A', 'Lopez Andres'),
-(10, 'Ingles B', 'Lopez Andres'),
-(11, 'Geografía A', 'Lopez Andres'),
-(12, 'Geografía B', 'Lopez Andres'),
-(13, 'Química A', 'Lopez Andres'),
-(14, 'Química B', 'Lopez Andres'),
-(15, 'Biología A', 'Lopez Andres'),
-(16, 'Biología B', 'Lopez Andres'),
-(17, 'Tecnología A', 'Lopez Andres'),
-(18, 'Tecnología B', 'Lopez Andres'),
-(19, 'Contabilidad A', 'Lopez Andres'),
-(20, 'Contabilidad b', 'Lopez Andres'),
-(21, 'Ed Fisica A', 'Lopez Andres'),
-(22, 'Ed Fisica B', 'Lopez Andres');
+INSERT INTO `materia` (`id_materia`, `nombre_materia`, `curso`, `divicion`, `doble`) VALUES
+(1, 'Lengua y Literatura', '1', 'A', b'1'),
+(2, 'Lengua y Literatura', '1', 'B', b'1'),
+(3, 'Lengua Adicional', '1', 'A', b'0'),
+(4, 'Lengua Adicional', '1', 'B', b'0'),
+(5, 'Matemática', '1', 'A', b'1'),
+(6, 'Matemática', '1', 'B', b'1'),
+(7, 'Biología', '1', 'A', b'1'),
+(8, 'Biología', '1', 'B', b'1'),
+(9, 'Geografía', '1', 'A', b'0'),
+(10, 'Geografía', '1', 'B', b'0'),
+(11, 'Historia', '1', 'A', b'1'),
+(12, 'Historia', '1', 'B', b'1'),
+(13, 'FEC', '1', 'A', b'0'),
+(14, 'FEC', '1', 'B', b'0'),
+(15, 'Educ. Tecnológica', '1', 'A', b'0'),
+(16, 'Educ. Tecnologica', '1', 'B', b'0'),
+(17, 'Arte', '1', 'A', b'0'),
+(18, 'Arte', '1', 'B', b'0'),
+(19, 'Educ. Física', '1', 'A', b'0'),
+(20, 'Educ. Física', '1', 'B', b'0'),
+(21, 'Tutoría', '1', 'A', b'0'),
+(22, 'Tutoría', '1', 'B', b'0'),
+(23, 'EDI', '1', 'A', b'0'),
+(24, 'EDI', '1', 'B', b'0'),
+(27, 'Lengua y Literatura', '2', 'A', b'1'),
+(28, 'Lengua y Literatura', '2', 'B', b'1'),
+(29, 'Lengua Adicional', '2', 'A', b'0'),
+(30, 'Lengua Adicional', '2', 'B', b'0'),
+(31, 'Matemática', '2', 'A', b'1'),
+(32, 'Matemática', '2', 'B', b'1'),
+(33, 'Biología', '2', 'A', b'1'),
+(34, 'Biología', '2', 'B', b'1'),
+(35, 'Geografía', '2', 'A', b'0'),
+(36, 'Geografía', '2', 'B', b'0'),
+(37, 'Historia', '2', 'A', b'1'),
+(38, 'Historia', '2', 'B', b'1'),
+(39, 'FEC', '2', 'A', b'0'),
+(40, 'FEC', '2', 'B', b'0'),
+(41, 'Educ. Tecnológica', '2', 'A', b'0'),
+(42, 'Educ. Tecnologica', '2', 'B', b'0'),
+(43, 'Arte', '2', 'A', b'0'),
+(44, 'Arte', '2', 'B', b'0'),
+(45, 'Educ. Física', '2', 'A', b'0'),
+(46, 'Educ. Física', '2', 'B', b'0'),
+(47, 'Tutoría', '2', 'A', b'0'),
+(48, 'Tutoría', '2', 'B', b'0'),
+(49, 'EDI', '2', 'A', b'0'),
+(50, 'EDI', '2', 'B', b'0'),
+(51, 'Lengua y Literatura', '3', 'A', b'1'),
+(52, 'Lengua y Literatura', '3', 'B', b'1'),
+(53, 'Lengua Adicional', '3', 'A', b'0'),
+(54, 'Lengua Adicional', '3', 'B', b'0'),
+(55, 'Matemática', '3', 'A', b'1'),
+(56, 'Matemática', '3', 'B', b'1'),
+(57, 'Físico-Quimica', '3', 'A', b'1'),
+(58, 'Físico-Quimica', '3', 'B', b'1'),
+(59, 'Economía', '3', 'A', b'0'),
+(60, 'Economía', '3', 'B', b'0'),
+(61, 'Biología', '3', 'A', b'1'),
+(62, 'Biología', '3', 'B', b'1'),
+(63, 'Geografía', '3', 'A', b'0'),
+(64, 'Geografía', '3', 'B', b'0'),
+(65, 'Historia', '3', 'A', b'0'),
+(66, 'Historia', '3', 'B', b'0'),
+(67, 'FEC', '3', 'A', b'0'),
+(68, 'FEC', '3', 'B', b'0'),
+(69, 'Administración', '3', 'A', b'0'),
+(70, 'Administración', '3', 'B', b'0'),
+(71, 'Tec. De la Información', '3', 'A', b'0'),
+(72, 'Tec. De la Información', '3', 'B', b'0'),
+(73, 'Organizaciones', '3', 'A', b'0'),
+(74, 'Organizacione', '3', 'B', b'0'),
+(75, 'Sist de inf Contable', '3', 'A', b'0'),
+(76, 'Sist de inf Contable', '3', 'B', b'0'),
+(77, 'Derecho', '3', 'A', b'0'),
+(78, 'Derecho', '3', 'B', b'0'),
+(79, 'Arte', '3', 'A', b'0'),
+(80, 'Arte', '3', 'B', b'0'),
+(81, 'Educ. Física', '3', 'A', b'0'),
+(82, 'Educ. Física', '3', 'B', b'0'),
+(83, 'EDI', '3', 'A', b'0'),
+(84, 'EDI', '3', 'B', b'0'),
+(85, 'Lengua y Literatura', '4', 'A', b'1'),
+(86, 'Lengua y Literatura', '4', 'B', b'1'),
+(87, 'Lengua Adicional', '4', 'A', b'0'),
+(88, 'Lengua Adicional', '4', 'B', b'0'),
+(89, 'Matemática', '4', 'A', b'1'),
+(90, 'Matemática', '4', 'B', b'1'),
+(91, 'Físico', '4', 'A', b'1'),
+(92, 'Físico', '4', 'B', b'1'),
+(93, 'Quimica', '4', 'A', b'1'),
+(94, 'Quimica', '4', 'B', b'1'),
+(95, 'Geografía', '4', 'A', b'0'),
+(96, 'Geografía', '4', 'B', b'0'),
+(97, 'Historia', '4', 'A', b'0'),
+(98, 'Historia', '4', 'B', b'0'),
+(99, 'Historia Orientada', '4', 'A', b'0'),
+(100, 'Historia Orientada', '4', 'B', b'0'),
+(101, 'FEC', '4', 'A', b'0'),
+(102, 'FEC', '4', 'B', b'0'),
+(103, 'Contabilidad patrimonial y de gestion', '4', 'A', b'0'),
+(104, 'Contabilidad patrimonial y de gestion', '4', 'B', b'0'),
+(105, 'Proyecto Organizacional', '4', 'A', b'0'),
+(106, 'Proyecto Organizacional', '4', 'B', b'0'),
+(107, 'Filosofía', '4', 'A', b'1'),
+(108, 'Filosofía', '4', 'B', b'1'),
+(109, 'Tec. De la Información 1', '4', 'A', b'0'),
+(110, 'Tec. De la Información 1', '4', 'B', b'0'),
+(111, 'Tec. De la Información 2', '4', 'A', b'0'),
+(112, 'Tec. De la Información 2', '4', 'B', b'0'),
+(113, 'Sist Administración', '4', 'A', b'0'),
+(114, 'Sist Administración', '4', 'B', b'0'),
+(115, 'Educ. Física', '4', 'A', b'0'),
+(116, 'Educ. Física', '4', 'B', b'0'),
+(117, 'Economía', '4', 'A', b'0'),
+(118, 'Economía', '4', 'B', b'0'),
+(119, 'EDI', '4', 'A', b'0'),
+(120, 'EDI', '4', 'B', b'0');
 
 --
 -- Índices para tablas volcadas
@@ -240,7 +338,7 @@ ALTER TABLE `cursa`
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
-  MODIFY `id_materia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_materia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- Restricciones para tablas volcadas

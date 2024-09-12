@@ -54,24 +54,18 @@
   </label>
 </div><br><br>
 <table class="table">
-  <thead class="thead-dark">
+  <thead class="thead-dark cabezera">
     <tr>
-      <th scope="col" colspan="17">Liceo N° 8 D.E N° 13 Esteban Echeverria</th>
-      <th scope="col" colspan="15">Curso: </th>
+      <th scope="col" colspan="10">Liceo N° 8 D.E N° 13 Esteban Echeverria</th>
+      <th scope="col" colspan="22" id="nivel">Curso: </th>
+      <th scope="col" colspan="1">AÑO: 2025 </th>
     </tr>
     <tr>
-      <th scope="col" colspan="12">Asignatura: <small class="asignatura"></small></th>
-      <th scope="col" colspan="20">Docente: <small id="docente"></small></th>
+      <th scope="col" colspan="13">Asignatura: <small class="asignatura"></small></th>
+      <th scope="col" colspan="20">Docente: <small></small></th>
     </tr>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Registro de Asistencia</th>
-      <th scope="col" colspan="5" class="mes mes1">Febrero</th>
-      <th scope="col" colspan="5" class="mes mes2">Marzo</th>
-      <th scope="col" colspan="5" class="mes mes3">Abril</th>
-      <th scope="col" colspan="5" class="mes mes4">Mayo</th>
-      <th scope="col" colspan="5" class="mes mes5">Junio</th>
-      <th scope="col" colspan="5" class="mes mes6">Julio</th>
+    <tr id="cambioCol">
+      
     </tr>
   </thead>
   <tbody class="cuerpoTable">

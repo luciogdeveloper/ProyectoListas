@@ -56,7 +56,7 @@
 </div>
 <div class="mb-3">
   <label for="curso" class="form-label">Curso Asignado</label>
-  <select class="form-select" name="curso" aria-label="Default select example" required>
+  <select id="nivel" class="form-select" name="curso" aria-label="Default select example" required>
   <option value="" selected>Selecciona un curso</option>
   <option value="1 A">1 A</option>
   <option value="1 B">1 B</option>
@@ -69,10 +69,9 @@
 </select>
 </div>
 <h3>Materias</h3>
-<?php 
-include("../modelo/materia.php");
-echo listarMaterias();
-?>
+<div id="cursoPornivel">
+
+</div>
 
 <button onclick="vaciarForm(event)" type="submit" class="btn btn-success">Success</button><br><br>
 
@@ -82,5 +81,6 @@ echo listarMaterias();
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../js/altas.js"></script>
 </body>
 </html>
