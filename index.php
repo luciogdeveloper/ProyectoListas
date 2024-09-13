@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turno Noche Alumnos</title>
     <link rel="shortcut icon" href="img/icono.jfif" style="border-radius:5px" type="image/x-icon">
-    <link rel="stylesheet" href="css/index.css">
     <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
+<body onload="cargarAlumnos(event)">
 <div class="container">
   <br>
   <div class="logo"">
@@ -33,10 +33,7 @@
 
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <form class="d-flex" role="search">
       <input class="form-control me-2" id="busqueda" type="search" placeholder="Buscar" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Buscar</button>
-    </form>
   </div>
 </nav>
 

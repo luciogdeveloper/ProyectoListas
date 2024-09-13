@@ -1,6 +1,6 @@
-let selectedModificar = document.querySelector("#busqueda");
-selectedModificar.addEventListener("change", async function (e) {
- await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnos.php', {
+let carga = document.querySelector(".container");
+ async function cargarAlumnos(e) {
+  await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnos.php', {
     method: "POST",
     body: JSON.stringify({
       "solicitud": 1
@@ -11,26 +11,33 @@ selectedModificar.addEventListener("change", async function (e) {
   })
     .then((res) => res.json())
     .then(function (json) {
-      console.log(json);
-        let div = document.querySelector("#lista")
-        let html = ``;
-        for (let i = 0; i < json.length; i++) {
-            html += `<div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-6 col-sm-3">
-                <img src="img/alumno.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body div">
-                  <h5 class="card-title">${json[i].apellido} ${json[i].nombre}</h5>
-                  <p class="card-text">DNI ${json[i].dni}</p>
-                  <p class="card-text">Curso asignado ${json[i].curso}</p>
-                </div>
-              </div>
-            </div>
-          </div>`;
-        }
-        div.innerHTML = html;
+      window.localStorage.setItem("alumnos",JSON.stringify(json));
     });
+}
+
+let selectedModificar = document.querySelector("#busqueda");
+selectedModificar.addEventListener("keyup", async function (e) {
+  let alumnos = JSON.parse(localStorage.getItem("alumnos"));
+  let div = document.querySelector(".row");
+  let busqueda = e.target.value;
+  let html = ``;
+  for (let i = 0; i < alumnos.length; i++) {
+    if (alumnos[i].apellido.toLowerCase().startsWith(busqueda.toLowerCase())) {
+
+      html += `<div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="img/alumno.jpg" alt="Card image cap">
+  <div class="card-header">
+    ${alumnos[i].apellido} ${alumnos[i].nombre}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">DNI: ${alumnos[i].dni}</li>
+    <li class="list-group-item">Curso Asignado: ${alumnos[i].curso}</li>
+    <li class="list-group-item">Mail: ${alumnos[i].mail}</li>
+    <li class="list-group-item">Mail: ${alumnos[i].mail}</li>
+  </ul>
+</div>`;
+    }
+  }
+  div.innerHTML = html;
 });
 

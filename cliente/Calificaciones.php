@@ -44,27 +44,27 @@
 
 
   <div class="cabezera">
-    <h3>Gobierno de la Ciudad de Buenos Aires</h3>
-    <h3>Ministerio de Educacion</h3>
-    <h3>PLANILLA DE CALIFICACIONES</h3>
-    <H4>Ciclo Lectivo: 2025</H4>
+    <h5>Gobierno de la Ciudad de Buenos Aires</h5>
+    <h5>Ministerio de Educacion</h5>
+    <h5 class="planilla">PLANILLA DE CALIFICACIONES</h5>
+    <h6>Ciclo Lectivo: 2025</h6>
     
 
     <div class="nivelMteria">
 
       <div class="cursoTurno">
-        <h4 class="cursoDivicion">NIVEL</h4>
-        <h4>TURNO NOCHE</h4>
+        <h6 class="cursoDivicion">NIVEL</h6>
+        <h6>TURNO NOCHE</h6>
       </div>
 
       <div class="cursoTurno">
-        <h4 class="asignatura">ASIGNATURA: </h4>
-        <h4>PROFESOR: ...............................</h4>
+        <h6 class="asignatura">ASIGNATURA: </h6>
+        <h6>PROFESOR: ...............................</h6>
       </div>
 
       <div class="cursoTurno">
-        <h4></h4>
-        <h4></h4>
+        <h6></h6>
+        <h6></h6>
       </div>
 
     </div>

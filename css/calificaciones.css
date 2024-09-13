@@ -11,6 +11,9 @@
     align-items: flex-end;
     width: 100%;
 }
+.planilla{
+    text-decoration: underline black;
+}
 .table{
     table-layout: fixed;
     width: 60%;
