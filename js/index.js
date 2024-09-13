@@ -1,10 +1,9 @@
-let selectedModificar = document.querySelector(".selectMateria");
+let selectedModificar = document.querySelector("#busqueda");
 selectedModificar.addEventListener("change", async function (e) {
-  let id_materia = e.target.selectedOptions[0].value;
- await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnosMateria.php', {
+ await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnos.php', {
     method: "POST",
     body: JSON.stringify({
-      "solicitud": id_materia
+      "solicitud": 1
     }),
     headers: {
       "Content-Type": "application/json",
@@ -12,6 +11,7 @@ selectedModificar.addEventListener("change", async function (e) {
   })
     .then((res) => res.json())
     .then(function (json) {
+      console.log(json);
         let div = document.querySelector("#lista")
         let html = ``;
         for (let i = 0; i < json.length; i++) {

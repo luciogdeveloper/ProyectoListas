@@ -37,6 +37,17 @@ function listarAlumno($id_materia){
     return $array;
 }
 
+function listarAlumnos(){
+    $Conexion = include('conexion.php');
 
+    $cadena_alumno = "SELECT * FROM alumno";
+    
+    $consulta = mysqli_query($Conexion, $cadena_alumno);
+    $array = array();
+    while($registro = mysqli_fetch_array($consulta)){
+        array_push($array, array('id' => $registro[0], 'apellido' => $registro[1], 'nombre' => $registro[2], 'dni' => $registro[3], 'mail' => $registro[4], 'telefono' => $registro[5], 'curso' => $registro[6]));
+    }
+    return $array;
+}
 
 ?>

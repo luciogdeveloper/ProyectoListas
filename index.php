@@ -6,7 +6,7 @@
     <title>Turno Noche Alumnos</title>
     <link rel="shortcut icon" href="img/icono.jfif" style="border-radius:5px" type="image/x-icon">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -30,18 +30,16 @@
 </ul>
 <br><br>
 
-<h3>
-  Listar alumnos por materia
-</h3>
-<h2>
-  Seleccionar un materia
-</h2>
-<select class="form-select selectMateria" multiple aria-label="Multiple select example">
-  <?php
-  include("modelo/materia.php");
-  echo listarMateriasBuscar();
-  ?>
-</select>
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" id="busqueda" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+
 <br><br>
 
 <div class="row" id="lista">
@@ -54,6 +52,6 @@
 
 
 <script src="js/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="css/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

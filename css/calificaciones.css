@@ -1,0 +1,104 @@
+.cabezera{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nivelMteria{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+}
+.table{
+    table-layout: fixed;
+    width: 60%;
+}
+.cabezaTabla tr{
+    height:200px;
+}
+.num{
+    width: 30px;
+}
+.centrarContenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nombre{
+    text-align: center;
+}
+.textRotado{
+    width: 30px;
+    text-align: left;
+}
+.textRotado p{
+    position: relative;
+    bottom: 70px;
+    right: 83px;
+    transform: rotate(270deg);
+    width: 200px;
+    height: 30px;
+}
+
+
+
+@media print{
+   
+    title{
+        display: none;
+    }
+    .table>:not(caption)>*>* {
+        padding: 0;
+    }
+    .table{
+        border: 1px solid black;
+        text-align: center;
+        width: 17.5cm;
+    }
+    .container{
+        padding: 0cm;
+        margin: 0cm;
+    }
+    .logo{
+        display: none;
+    }
+    .selectTExt{
+        display: none;
+        height: 0cm;
+    }
+    .selectMateria{
+        display: none;
+        height: 0cm;
+    }
+    .form-check{
+        display: none;
+        height: 0cm;
+    }
+    .nav{
+        display: none;
+        height: 0cm;
+    }
+    .cabezera{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .cabezaTabla tr th{
+        border: 1px solid black;
+    }
+   .alumnos{
+    text-align: left;
+    margin: 1cm;
+   }
+    .ponerBorde{
+        border: 1px solid black;
+        width: 0.5cm;
+        height: 2px;
+        padding: 0;
+        margin: 0;
+    }
+}
