@@ -56,7 +56,7 @@
 </div>
 <div class="mb-3">
   <label for="curso" class="form-label">Curso Asignado</label>
-  <select id="nivel" class="form-select" name="curso" aria-label="Default select example" required>
+  <select id="nivel" class="altas form-select" name="curso" aria-label="Default select example" required>
   <option value="" selected>Selecciona un curso</option>
   <option value="1 A">1 A</option>
   <option value="1 B">1 B</option>

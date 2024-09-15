@@ -12,6 +12,31 @@ let carga = document.querySelector(".container");
     .then((res) => res.json())
     .then(function (json) {
       window.localStorage.setItem("alumnos",JSON.stringify(json));
+      let div = document.querySelector(".row");
+      let html = ``;
+    for (let i = 0; i < json.length; i++) {
+
+      html += `<div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="img/alumno.jpg" alt="Card image cap">
+  <div class="card-header">
+    ${json[i].apellido} ${json[i].nombre}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">DNI: ${json[i].dni}</li>
+    <li class="list-group-item">Curso Asignado: ${json[i].curso}</li>
+    <li class="list-group-item">Mail: ${json[i].mail}</li>
+    <li class="list-group-item">Telefono: ${json[i].telefono}</li>
+  </ul>
+  <br>
+  <form action="server/index.php" method="post">
+  <input name="idAlumno" value="${json[i].id}" style="display:none">
+  <button type="submit" class="btn btn-outline-danger">Perfil del Alumno</button>
+  </form>
+  <br>
+</div>`;
+    
+  }
+  div.innerHTML = html;
     });
 }
 
@@ -35,6 +60,12 @@ selectedModificar.addEventListener("keyup", async function (e) {
     <li class="list-group-item">Mail: ${alumnos[i].mail}</li>
     <li class="list-group-item">Mail: ${alumnos[i].mail}</li>
   </ul>
+  <br>
+  <form action="server/index.php" method="post">
+  <input name="idAlumno" value="${alumnos[i].id}" style="display:none">
+  <button type="submit" class="btn btn-outline-danger">Perfil del Alumno</button>
+  </form>
+  <br>
 </div>`;
     }
   }

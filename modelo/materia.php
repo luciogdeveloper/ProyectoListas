@@ -34,15 +34,15 @@ function listarMaterias($nivel){
 function listarMateriasAlu($id){
     $Conexion = include('conexion.php');
 
-    $cadena = 'SELECT materia.nombre_materia,materia.docente FROM alumno 
+    $cadena = 'SELECT materia.id_materia,materia.nombre_materia,materia.curso,materia.divicion FROM alumno 
     INNER JOIN cursa AS cursa ON alumno.id_alumno = cursa.id_alumno
-    INNER JOIN materia AS materia ON materia.id_materia = cursa.id_materia WHERE alumno.id_alumno = '.$id;
+    INNER JOIN materia AS materia ON materia.id_materia = cursa.id_materia WHERE alumno.id_alumno ='.$id;
 
     $consulta = mysqli_query($Conexion, $cadena);
 
     $array = array();
     while($registro = mysqli_fetch_array($consulta)){
-        array_push($array, array('nombre' => $registro[0], 'docente' => $registro[1]));    
+        array_push($array, array('id' => $registro[0], 'nombre' => $registro[1],'curso' => $registro[2],'divicion' => $registro[3]));    
     }
 
     return $array;
