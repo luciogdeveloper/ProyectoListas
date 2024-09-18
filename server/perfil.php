@@ -50,7 +50,7 @@ $materias = listarMateriasAlu($id);
         </div>
       </div>
     </div>
-    <div class="btn-toolbar col-md-3" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-toolbar col-md-3" role="toolbar" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <button type="button" class="botones btn btn-outline-danger"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
 </svg>
@@ -64,8 +64,31 @@ $materias = listarMateriasAlu($id);
   </div>
   </form>
   <br><br>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="eliminar.php" method="post">
+    <div class="modal-content">
+      <div class="modal-header">
+      <p class="card-text" style="display:none"><?php echo '<label style="width:100px;margin-right:50px">Apellido:</label> <input name="idAlumno" value="'. $datos[0]['id'].'" >' ?></p>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar Borrado</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Esta seguro que desea eliminar este Alumno?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
 </div>
 <br>
 
+<script src="../css/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

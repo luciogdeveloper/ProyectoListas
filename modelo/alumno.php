@@ -90,4 +90,22 @@ function modificar($id,$apellido,$nombre, $dni,$mail,$telefono,$curso, $materia)
     
 }
 
+function eliminar($id){
+    $Conexion = include('conexion.php');
+
+    $borrar_cursada = "DELETE FROM cursa WHERE id_alumno = '$id'";
+    $borrar_alumno = "DELETE FROM alumno WHERE id_alumno = '$id'";
+
+    try {
+        $consulta = mysqli_query($Conexion, $borrar_cursada);
+
+        if ($consulta) {
+            $res = mysqli_query($Conexion, $borrar_alumno);
+            return $res;
+        }
+    } catch (Exception $e) {
+        return substr($e, 22, 41);
+    }
+}
+
 ?>

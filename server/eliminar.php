@@ -1,14 +1,8 @@
 <?php
-$nombre = $_POST["nombre"];
-$apellido = $_POST["apellido"];
-$dni = $_POST["dni"];
-$mail = $_POST["mail"];
-$telefono = $_POST["telefono"];
-$curso = $_POST["curso"];
-$materia = $_POST["materia"];
+$id = $_POST["idAlumno"];
 
 include("../modelo/alumno.php");
-$resul = insertar( $apellido,$nombre, $dni,$mail,$telefono,$curso, $materia);
+$resul = eliminar( $id);
 
 ?>
 
