@@ -1,0 +1,14 @@
+.row{
+    display: flex;
+}
+
+.btn-toolba{
+    display: flex;
+    width: 30%;
+    height: 100px;
+    justify-content: flex-end;
+}
+.botones{
+   height: 70px;
+   width: 70px;
+}

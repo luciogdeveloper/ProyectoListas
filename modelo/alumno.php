@@ -77,12 +77,13 @@ function modificar($id,$apellido,$nombre, $dni,$mail,$telefono,$curso, $materia)
 
         if ($consulta) {
             $res = mysqli_query($Conexion, $borrar_cursada);
-        }
-        foreach ($materia as $key => $value) {
-            $cadena_materia = "INSERT INTO cursa(id_alumno,id_materia) VALUES ('$id','$value')";
-            $resultado = mysqli_query($Conexion, $cadena_materia);
-        }
+            foreach ($materia as $key => $value) {
+                $cadena_materia = "INSERT INTO cursa(id_alumno,id_materia) VALUES ('$id','$value')";
+                $resultado = mysqli_query($Conexion, $cadena_materia);
+            }
+
         return "OK";
+        }
     } catch (Exception $e) {
         return substr($e, 22, 41);
     }

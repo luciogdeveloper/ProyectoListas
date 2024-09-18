@@ -14,12 +14,12 @@ $materias = json_encode(listarMateriasAlu($id));
     <title>Turno Noche Alumnos</title>
     <link rel="shortcut icon" href="../img/icono.jfif" style="border-radius:5px" type="image/x-icon">
     <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<body>
-    <br>
-    <a href="../index.php" class="btn btn-link"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</a>
-    <br>
+<body onload='ckecked(<?php echo $materias ?>)'>
+  <form action="perfil.php" method="post">
+    <p class="card-text" style="display:none"><?php echo '<label style="width:100px;margin-right:50px">Apellido:</label> <input name="idAlumno" value="'. $datos[0]['id'].'" >' ?></p>
+    <button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</button><br>
+  </form>
 <div class="container">
     <h3>Datao del Alumno</h3><br>
 <form action="modificar.php" onsubmit="verError(event)" method="post">
@@ -53,14 +53,34 @@ $materias = json_encode(listarMateriasAlu($id));
         </div>
         <h3>Materias</h3>
         <div id="cursoPornivel">
-
+          <?php 
+          echo listarMateriasCompletas();
+          ?>
         </div>
       </div>
     </div>
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-      <button type="button" class="btn btn-danger">Elimiar este Alumno</button>
-      <button type="submit"  class="btn btn-warning">Modificar datos del Alumno</button>
-    </die>
+    <button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Guardar Cambios
+    </button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar Edicion</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Esta seguro que desea editar este Alumno?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+   
   </div>
   </div>
   </form>
@@ -68,9 +88,11 @@ $materias = json_encode(listarMateriasAlu($id));
 </div>
 <br>
 
+
+<script src="../css/bootstrap/js/bootstrap.js"></script>
 <script>
     window.localStorage.setItem("materias",JSON.stringify(<?php echo $materias ?>));
 </script>
-<script src="../js/altas.js"></script>
+<script src="../js/modificar.js"></script>
 </body>
 </html>

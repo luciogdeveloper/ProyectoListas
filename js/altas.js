@@ -45,6 +45,3 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
         })
 });
 
-function check(e){
-  console.log(e);
-}

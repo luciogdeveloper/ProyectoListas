@@ -39,7 +39,7 @@ selectedModificar.addEventListener("change", async function (e) {
   <th scope="col" colspan="6" class="mes mes3">Mayo</th>
   <th scope="col" colspan="6" class="mes mes4">Junio</th>
   <th scope="col" colspan="6" class="mes mes5">Julio</th>
-  <th scope="col" colspan="1" class="mes">Obser</th>
+  <th scope="col" colspan="1" class="mes">Obsevacionesr</th>
     </tr>`;
 
     outCabecera.innerHTML = cabezera;
