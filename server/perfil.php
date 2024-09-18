@@ -18,7 +18,7 @@ $materias = listarMateriasAlu($id);
 </head>
 <body>
     <br>
-    <a href="../index.php" class="btn btn-link"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</a>
+    <a href="../index1.php" class="btn btn-link"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</a>
     <br>
 <div class="container">
     <h3>Datao del Alumno</h3><br>

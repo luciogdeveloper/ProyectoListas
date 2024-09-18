@@ -16,7 +16,7 @@
   </div>
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" href="../index.php">Inicio</a>
+    <a class="nav-link" href="../index1.php">Inicio</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" aria-current="page"  href="#">Altas</a>
