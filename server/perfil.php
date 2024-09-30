@@ -13,7 +13,7 @@ $materias = listarMateriasAlu($id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turno Noche Alumnos</title>
     <link rel="shortcut icon" href="../img/icono.jfif" style="border-radius:5px" type="image/x-icon">
-    <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/perfil.css">
 </head>
 <body>
