@@ -40,6 +40,7 @@ $materias = listarMateriasAlu($id);
         <p class="card-text"><small class="text-body-secondary"><?php echo 'Curso: '. $datos[0]['curso']; ?></p></small></p>
         
         <h3>Materias</h3>
+
         <div id="cursoPornivel">
             <?php
             foreach ($materias as $key => $value) {
@@ -48,6 +49,82 @@ $materias = listarMateriasAlu($id);
             
             ?>
         </div>
+        <h3>Horarios</h3>
+
+        <div id="horario">
+        <table class="table">
+        <thead>
+  <tr>
+    <th scope="col"></th>
+    <td>Lunes</td>
+    <td>Martes</td>
+    <td>Miercoles</td>
+    <td>Jueves</td>
+    <td>Viernes</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>1°</td>
+    <td></td>
+    <td></td>
+    <td</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  <td>2°</td>
+    <td></td>
+    <td></td>
+    <td</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>3°</td>
+    <td></td>
+    <td></td>
+    <td</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  <td>4°</td>
+    <td></td>
+    <td></td>
+    <td</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  <td>5°</td>
+    <td></td>
+    <td></td>
+    <td</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>6°</td>
+    <td></td>
+    <td></td>
+    <td</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>7°</td>
+    <td></td>
+    <td></td>
+    <td</td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
+        </div>
+
+
       </div>
     </div>
     <div class="btn-toolbar col-md-3" role="toolbar" data-bs-toggle="modal" data-bs-target="#exampleModal">
