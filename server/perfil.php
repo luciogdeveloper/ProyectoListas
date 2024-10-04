@@ -71,12 +71,14 @@ $materias = listarMateriasAlu($id);
     <td</td>
     <td></td>
     <td></td>
+    <td></td>
   </tr>
   <tr>
   <td>2°</td>
     <td></td>
     <td></td>
     <td</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
@@ -87,12 +89,14 @@ $materias = listarMateriasAlu($id);
     <td</td>
     <td></td>
     <td></td>
+    <td></td>
   </tr>
   <tr>
   <td>4°</td>
     <td></td>
     <td></td>
     <td</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
@@ -103,6 +107,7 @@ $materias = listarMateriasAlu($id);
     <td</td>
     <td></td>
     <td></td>
+    <td></td>
   </tr>
   <tr>
     <td>6°</td>
@@ -111,12 +116,14 @@ $materias = listarMateriasAlu($id);
     <td</td>
     <td></td>
     <td></td>
+    <td></td>
   </tr>
   <tr>
     <td>7°</td>
     <td></td>
     <td></td>
     <td</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>
