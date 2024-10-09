@@ -63,96 +63,78 @@ $materias = listarMateriasAlu($id);
     <td>Viernes</td>
   </tr>
   </thead>
-  <tbody>
-  <tr>
-    <td>-1°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
+  <tbody class="tbody">
+  <tr class="-2">
     <td>-2°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
-    <td>-3°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+  <tr class="-1">
+    <td>-1°</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
+  <tr class="1">
     <td>1°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
+  <tr class="2">
   <td>2°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
+  <tr class="3">
     <td>3°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
+  <tr class="4">
   <td>4°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
+  <tr class="5">
   <td>5°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
+  <tr class="6">
     <td>6°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
-  <tr>
+  <tr class="7">
     <td>7°</td>
-    <td></td>
-    <td></td>
-    <td</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
   </tr>
   </tbody>
 </table>
@@ -201,5 +183,9 @@ $materias = listarMateriasAlu($id);
 <br>
 
 <script src="../css/bootstrap/js/bootstrap.js"></script>
+<script>
+  window.localStorage.setItem("materiasAlumno",JSON.stringify(<?php echo json_encode($materias) ?>));
+</script>
+<script src="../js/perfil.js"></script>
 </body>
 </html>
