@@ -21,7 +21,7 @@ $materias = listarMateriasAlu($id);
     <a href="../index1.php" class="btn btn-link"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</a>
     <br>
 <div class="container">
-    <h3>Datao del Alumno</h3><br>
+    <h3>Datos del Alumno</h3><br>
 <form action="index.php" method="post">
 <div class="card mb-3" style="max-width: 1500px;">
   <div class="row g-0">
