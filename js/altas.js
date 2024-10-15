@@ -18,9 +18,10 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
         .then((res) => res.json())
         .then(function (json) {
           if (pagina == "altas") {
+            localStorage.setItem("materiasRecibidasPorCurso",JSON.stringify(json));
             for (let i = 0; i < json.length; i++) {
               htmlListar += `<div class="form-check form-check-inline col-4">
-              <input class="form-check-input" name="materia[]" type="checkbox" value="${json[i].id}" id="flexCheckDefault">
+              <input class="form-check-input" onchange="elegirhorario(event)" name="materia[]" type="checkbox" value="${json[i].id}" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">${json[i].nombre} ${json[i].curso}${json[i].divicion}</label></div>`;
           }
           htmlListar += `</div><br><br>`;
@@ -45,3 +46,6 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
         })
 });
 
+function elegirhorario(e) {
+  console.dir(e);
+}
