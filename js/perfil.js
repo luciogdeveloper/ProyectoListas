@@ -231,7 +231,7 @@ async function buscarPorId(idMateria) {
 
                 break;
                 
-            case "Miércoles":
+            case "Miercoles":
                 switch (element.primera) {
                     case "17:00 a 17:35":
                         tbody[0].children[4].innerText = idMateria.nombre;
