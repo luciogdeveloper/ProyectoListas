@@ -87,7 +87,7 @@ $horarios = listarTodosHorario();
 <script>
    window.localStorage.setItem("horarios",JSON.stringify(<?php echo json_encode($horarios) ?>));
 </script>
-<script src="../css/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../css/bootstrap/js/bootstrap.bundle.js" crossorigin="anonymous"></script>
 <script src="../js/altas.js"></script>
 </body>
 </html>

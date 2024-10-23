@@ -4,7 +4,7 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
     let pagina = e.target.classList[0];
     let nivel = nivelDivicion.split(" ");
     let divMaterias = document.querySelector("#cursoPornivel");
-    let materia = JSON.parse(localStorage.getItem("materias"));
+    
     let htmlListar = `<div class="row justify-content-start">`;
     await fetch('http://localhost:80/ProyectoListas/server/peticiones/materiasPorCurso.php', {
         method: "POST",
@@ -35,7 +35,9 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
           htmlListar += `</div><br><br>`;
           divMaterias.innerHTML = htmlListar;
           }
+          let materia = JSON.parse(localStorage.getItem("materias"));
           let checkGroup = document.querySelectorAll(".form-check-input");
+          if (materia != null && pagina =="modificar") {
           for (let i = 0; i < checkGroup.length; i++) {
             for (let j = 0; j < materia.length; j++) {
               if (checkGroup[i].value == materia[j].id && pagina =="modificar") {
@@ -43,6 +45,7 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
               }
             }
           }
+        }
         })
 });
 
@@ -72,23 +75,33 @@ function elegirhorario(e) {
 
   horarioCheked.forEach(horario => {
     if (horario.tercera != "") {
-      let inicio = horario.primera.split(" ");
-      let fin = horario.tercera.split(" ");
+      let inicio = horario.primera.split(" ")[0];
+      let fin = horario.tercera.split(" ")[2];
       let rango = {
         materia: horario.id_materia,
         dia: horario.dia,
-        inicio: inicio[0],
-        fin: fin[2]
+        inicio: inicio,
+        fin: fin
+      }
+      hora.push(rango);
+    }else if (horario.segunda != ""){
+      let inicio = horario.primera.split(" ")[0];
+      let fin = horario.segunda.split(" ")[2];
+      let rango = {
+        materia: horario.id_materia,
+        dia: horario.dia,
+        inicio: inicio,
+        fin: fin
       }
       hora.push(rango);
     }else {
-      let inicio = horario.primera.split(" ");
-      let fin = horario.segunda.split(" ");
+      let inicio = horario.primera.split(" ")[0];
+      let fin = horario.primera.split(" ")[2];
       let rango = {
         materia: horario.id_materia,
         dia: horario.dia,
-        inicio: inicio[0],
-        fin: fin[2]
+        inicio: inicio,
+        fin: fin
       }
       hora.push(rango);
     }
@@ -107,9 +120,17 @@ function elegirhorario(e) {
               if (coincidencia1 == true || coincidencia2 == true) {
                 materiasBloquear.push(subElement.id_materia);
               }
-            }else {
+            }else if(subElement.segunda != ""){
               let inicio = subElement.primera.split(" ")[0];
               let fin = subElement.segunda.split(" ")[2];
+              let coincidencia1 = isInRange(diahora.inicio, diahora.fin,inicio);
+              let coincidencia2 = isInRange(diahora.inicio, diahora.fin,fin);
+              if (coincidencia1 == true || coincidencia2 == true) {
+                materiasBloquear.push(subElement.id_materia);
+              }
+            }else {
+              let inicio = subElement.primera.split(" ")[0];
+              let fin = subElement.primera.split(" ")[2];
               let coincidencia1 = isInRange(diahora.inicio, diahora.fin,inicio);
               let coincidencia2 = isInRange(diahora.inicio, diahora.fin,fin);
               if (coincidencia1 == true || coincidencia2 == true) {
