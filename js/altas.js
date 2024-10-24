@@ -4,8 +4,17 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
     let pagina = e.target.classList[0];
     let nivel = nivelDivicion.split(" ");
     let divMaterias = document.querySelector("#cursoPornivel");
-    let materia = JSON.parse(localStorage.getItem("materias"));
+    let materia = JSON.parse(localStorage.getItem("materias")); 
+    let grado = selectedNivel.selectedOptions[0].value.split(" ")[0];
+    let cuatrimestre = document.querySelector("#cuatrimestre");
     let htmlListar = `<div class="row justify-content-start">`;
+
+    if (grado === '4') {
+      cuatrimestre.style.display = "block";
+    }else {
+      cuatrimestre.style.display = "none";
+    }
+
     await fetch('http://localhost:80/ProyectoListas/server/peticiones/materiasPorCurso.php', {
         method: "POST",
         body: JSON.stringify({
@@ -20,10 +29,11 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
           if (pagina == "altas") {
             localStorage.setItem("materiasRecibidasPorCurso",JSON.stringify(json));
             for (let i = 0; i < json.length; i++) {
-              htmlListar += `<div class="form-check form-check-inline col-4">
+              htmlListar += `<div onload="bloquearMateriasPrimerCuatrimestre()" class="form-check form-check-inline col-4">
               <input class="form-check-input" onchange="elegirhorario(event)" name="materia[]" type="checkbox" value="${json[i].id}" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">${json[i].nombre} ${json[i].curso}${json[i].divicion}</label></div>`;
           }
+         
           htmlListar += `</div><br><br>`;
           divMaterias.innerHTML = htmlListar;
           }else if (pagina =="modificar") {
@@ -45,6 +55,22 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
           }
         })
 });
+
+
+
+
+const bloquearMateriasPrimerCuatrimestre = () => { 
+  let divMaterias = document.querySelector("#cursoPornivel");
+  let idBloquearPrimerCuatrimestre = [91,92,97,98,109,110];
+  console.dir(divMaterias);
+  idBloquearPrimerCuatrimestre.forEach(element => {
+    for (let i = 0; i < divMaterias.length; i++) {
+      if (element === divMaterias[i].children[0].attributes.value.value) {
+        divMaterias[i].children[0].disabled = true;
+      }
+    }
+  });
+}
 
 
 
@@ -107,9 +133,17 @@ function elegirhorario(e) {
               if (coincidencia1 == true || coincidencia2 == true) {
                 materiasBloquear.push(subElement.id_materia);
               }
-            }else {
+            }else if(subElement.segunda != ""){
               let inicio = subElement.primera.split(" ")[0];
               let fin = subElement.segunda.split(" ")[2];
+              let coincidencia1 = isInRange(diahora.inicio, diahora.fin,inicio);
+              let coincidencia2 = isInRange(diahora.inicio, diahora.fin,fin);
+              if (coincidencia1 == true || coincidencia2 == true) {
+                materiasBloquear.push(subElement.id_materia);
+              }
+            }else {
+              let inicio = subElement.primera.split(" ")[0];
+              let fin = subElement.primera.split(" ")[2];
               let coincidencia1 = isInRange(diahora.inicio, diahora.fin,inicio);
               let coincidencia2 = isInRange(diahora.inicio, diahora.fin,fin);
               if (coincidencia1 == true || coincidencia2 == true) {
@@ -143,8 +177,6 @@ function elegirhorario(e) {
     }
   }
 
-  
-
 }
 
 
@@ -159,4 +191,15 @@ const isInRange = (start, end, time) => {
     return;
   }
   return time >= start && time <= end;
+}
+
+const cambiarCalendario = (e) => {
+  let materias = JSON.parse(localStorage.getItem("materiasRecibidasPorCurso"));
+  let cuatrimestreActual = 1;
+  
+  let idBloquearSegundoCuatrimestre = [93,94,99,100,111,112];
+
+
+  console.dir();
+  console.dir(e.target.value);
 }

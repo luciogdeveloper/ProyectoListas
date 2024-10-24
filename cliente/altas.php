@@ -11,12 +11,13 @@ $horarios = listarTodosHorario();
     <title>Turno Noche Alumnos</title>
     <link rel="shortcut icon" href="../img/icono.jfif" style="border-radius:5px" type="image/x-icon">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/altas.css">
     <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
 <br>
-  <div class="logo"">
+  <div class="logo">
   <img src="../img/logoLiceo.png" alt="">
   </div>
 <ul class="nav nav-tabs">
@@ -74,6 +75,20 @@ $horarios = listarTodosHorario();
 </select>
 </div>
 <h3>Materias</h3>
+<div id="cuatrimestre">
+<div class="form-check">
+  <input onclick="cambiarCalendario(event)" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  Primer Cuatrimestre
+  </label>r
+</div>
+<div class="form-check">
+  <input onclick="cambiarCalendario(event)" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+  <label class="form-check-label" for="flexRadioDefault2">
+   Segundo Cuatrimestre
+  </label>
+  </div>
+</div><br><br>
 <div id="cursoPornivel">
 
 </div>
