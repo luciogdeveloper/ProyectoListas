@@ -4,13 +4,9 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
     let pagina = e.target.classList[0];
     let nivel = nivelDivicion.split(" ");
     let divMaterias = document.querySelector("#cursoPornivel");
-<<<<<<< HEAD
     let materia = JSON.parse(localStorage.getItem("materias")); 
     let grado = selectedNivel.selectedOptions[0].value.split(" ")[0];
     let cuatrimestre = document.querySelector("#cuatrimestre");
-=======
-    
->>>>>>> a769bc702e797a709c9032106dc4973e01a21424
     let htmlListar = `<div class="row justify-content-start">`;
 
     if (grado === '4') {
@@ -145,25 +141,25 @@ function elegirhorario(e) {
             if (subElement.tercera != "") {
               let inicio = subElement.primera.split(" ")[0];
               let fin = subElement.tercera.split(" ")[2];
-              let coincidencia1 = isInRange(diahora.inicio, diahora.fin,inicio);
-              let coincidencia2 = isInRange(diahora.inicio, diahora.fin,fin);
-              if (coincidencia1 == true || coincidencia2 == true) {
+              let coincidencia1 = isInRange(diahora.inicio, diahora.fin, inicio, fin);
+              
+              if (coincidencia1 == true) {
                 materiasBloquear.push(subElement.id_materia);
               }
             }else if(subElement.segunda != ""){
               let inicio = subElement.primera.split(" ")[0];
               let fin = subElement.segunda.split(" ")[2];
-              let coincidencia1 = isInRange(diahora.inicio, diahora.fin,inicio);
-              let coincidencia2 = isInRange(diahora.inicio, diahora.fin,fin);
-              if (coincidencia1 == true || coincidencia2 == true) {
+              let coincidencia1 = isInRange(diahora.inicio, diahora.fin, inicio, fin);
+              
+              if (coincidencia1 == true) {
                 materiasBloquear.push(subElement.id_materia);
               }
             }else {
               let inicio = subElement.primera.split(" ")[0];
               let fin = subElement.primera.split(" ")[2];
-              let coincidencia1 = isInRange(diahora.inicio, diahora.fin,inicio);
-              let coincidencia2 = isInRange(diahora.inicio, diahora.fin,fin);
-              if (coincidencia1 == true || coincidencia2 == true) {
+              let coincidencia1 = isInRange(diahora.inicio, diahora.fin, inicio, fin);
+              
+              if (coincidencia1 == true) {
                 materiasBloquear.push(subElement.id_materia);
               }
             }
@@ -202,12 +198,17 @@ const onlyUnique = (value, index, self) => {
 }
 
 
-const isInRange = (start, end, time) => {
-  if(time < '00:00' || time > '23:59' || time.substring(3) > '59') {
+const isInRange = (start, end, timeStart, timeEnd) => {
+  if(timeStart < '00:00' || timeStart > '23:59' || timeStart.substring(3) > '59') {
     console.log('Hora no válida');
     return;
+  }else if (timeStart >= end) {
+    return false;
+  }else if (timeStart < end && timeEnd <= start) {
+    return false;
+  }else {
+    return true;
   }
-  return time >= start && time <= end;
 }
 
 const cambiarCalendario = (e) => {
