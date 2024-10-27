@@ -5,15 +5,7 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
     let nivel = nivelDivicion.split(" ");
     let divMaterias = document.querySelector("#cursoPornivel");
     let materia = JSON.parse(localStorage.getItem("materias")); 
-    let grado = selectedNivel.selectedOptions[0].value.split(" ")[0];
-    let cuatrimestre = document.querySelector("#cuatrimestre");
     let htmlListar = `<div class="row justify-content-start">`;
-
-    if (grado === '4') {
-      cuatrimestre.style.display = "block";
-    }else {
-      cuatrimestre.style.display = "none";
-    }
 
     await fetch('http://localhost:80/ProyectoListas/server/peticiones/materiasPorCurso.php', {
         method: "POST",
@@ -30,7 +22,7 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
             localStorage.setItem("materiasRecibidasPorCurso",JSON.stringify(json));
             for (let i = 0; i < json.length; i++) {
               htmlListar += `<div onload="bloquearMateriasPrimerCuatrimestre()" class="form-check form-check-inline col-4">
-              <input class="form-check-input" onchange="elegirhorario(event)" name="materia[]" type="checkbox" value="${json[i].id}" id="flexCheckDefault">
+              <input class="form-check-input" onchange="elegirhorario(event)" name="materia[]" type="checkbox" value="${json[i].id}" title="${json[i].cuatrimestre}" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">${json[i].nombre} ${json[i].curso}${json[i].divicion}</label></div>`;
           }
          
@@ -38,9 +30,9 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
           divMaterias.innerHTML = htmlListar;
           }else if (pagina =="modificar") {
             for (let i = 0; i < json.length; i++) {
-              htmlListar += `<div class="form-check form-check-inline col-4" onmauseover="check(event)">
-              <input class="form-check-input" name="materia[]" type="checkbox" value="${json[i].id}" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">${json[i].nombre} ${json[i].curso}${json[i].divicion}</label></div>`;  
+              htmlListar += `<div onload="bloquearMateriasPrimerCuatrimestre()" class="form-check form-check-inline col-4">
+              <input class="form-check-input" onchange="elegirhorario(event)" name="materia[]" type="checkbox" value="${json[i].id}" title="${json[i].cuatrimestre}" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">${json[i].nombre} ${json[i].curso}${json[i].divicion}</label></div>`;
             }
           htmlListar += `</div><br><br>`;
           divMaterias.innerHTML = htmlListar;
@@ -59,24 +51,6 @@ selectedNivel.addEventListener("change",async function mostrerMaterias(e){
         })
 });
 
-
-
-
-const bloquearMateriasPrimerCuatrimestre = () => { 
-  let divMaterias = document.querySelector("#cursoPornivel");
-  let idBloquearPrimerCuatrimestre = [91,92,97,98,109,110];
-  console.dir(divMaterias);
-  idBloquearPrimerCuatrimestre.forEach(element => {
-    for (let i = 0; i < divMaterias.length; i++) {
-      if (element === divMaterias[i].children[0].attributes.value.value) {
-        divMaterias[i].children[0].disabled = true;
-      }
-    }
-  });
-}
-
-
-
 function elegirhorario(e) {
   
   let divMaterias = document.querySelector("#cursoPornivel").children[0].children;
@@ -88,10 +62,11 @@ function elegirhorario(e) {
   let horarios = JSON.parse(localStorage.getItem("horarios"));
   let idCheked = e.target.attributes[4].value;
   let elementoCheked = e.target.checked;
+  let elementoData = e.target;
   let horarioCheked = horarios.filter(elemnet => elemnet.id_materia == idCheked)
 
   for (let i = 0; i < divMaterias.length; i++) {
-    let id =parseInt(divMaterias[i].children[0].value);
+    let id = parseInt(divMaterias[i].children[0].value);
     idMaterias.push(id);
   }
  
@@ -174,7 +149,7 @@ function elegirhorario(e) {
     for (let i = 0; i < divMaterias.length; i++) {
       arrSinReperirMateriasBloquear.forEach(id => {
         if (id === divMaterias[i].children[0].attributes.value.value) {
-          if (id != idCheked) {
+          if (id != idCheked && id != elementoData.title) {
             divMaterias[i].children[0].disabled = true;
           }
         }
@@ -209,15 +184,4 @@ const isInRange = (start, end, timeStart, timeEnd) => {
   }else {
     return true;
   }
-}
-
-const cambiarCalendario = (e) => {
-  let materias = JSON.parse(localStorage.getItem("materiasRecibidasPorCurso"));
-  let cuatrimestreActual = 1;
-  
-  let idBloquearSegundoCuatrimestre = [93,94,99,100,111,112];
-
-
-  console.dir();
-  console.dir(e.target.value);
 }

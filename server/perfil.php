@@ -16,7 +16,7 @@ $materias = listarMateriasAlu($id);
     <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/perfil.css">
 </head>
-<body>
+<body onload="inicio(1)">
     <br>
     <a href="../index1.php" class="btn btn-link"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</a>
     <br>
@@ -91,9 +91,23 @@ $materias = listarMateriasAlu($id);
 </div>
 
 <div id="horario">
-        <h3>Horarios</h3>
-        <table class="table">
-        <thead>
+  <div class="custrimestre">
+  <div class="form-check">
+  <input onclick="cambiarCalendario(event)" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  Primer Cuatrimestre
+  </label>r
+</div>
+<div class="form-check">
+  <input onclick="cambiarCalendario(event)" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+  <label class="form-check-label" for="flexRadioDefault2">
+   Segundo Cuatrimestre
+  </label>
+</div>
+  </div>
+  <h3>Horarios</h3>
+  <table class="table">
+  <thead>
   <tr>
     <th scope="col"></th>
     <td></td>

@@ -24,7 +24,7 @@ function listarMateriasCompletas(){
     $htmlListar = '<div class="row justify-content-start">';
     while($registro = mysqli_fetch_array($consulta)){
         $htmlListar = $htmlListar. '<div class="form-check form-check-inline col-4">
-              <input class="form-check-input" onload="ckecked(event)" name="materia[]" type="checkbox" value="'.$registro[0].'" id="flexCheckDefault">
+              <input class="form-check-input" onload="ckecked(event)" name="materia[]"onchange="elegirhorariosAlumno(event)" type="checkbox" value="'.$registro[0].'" title="'.$registro[5].'" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">'.$registro[1].' '.$registro[2].$registro[3].'</label>
               </div>';
     }
@@ -43,7 +43,7 @@ function listarMaterias($nivel){
     $array = array();
     
     while($registro = mysqli_fetch_array($consulta)){
-        array_push($array, array('id' => $registro[0], 'nombre' => $registro[1],'curso' => $registro[2], 'divicion' => $registro[3], 'doble' => $registro[4]));
+        array_push($array, array('id' => $registro[0], 'nombre' => $registro[1],'curso' => $registro[2], 'divicion' => $registro[3], 'doble' => $registro[4], 'cuatrimestre' => $registro[5]));
     }
 
     return $array;

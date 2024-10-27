@@ -3,8 +3,10 @@ $id = $_POST["idAlumno"];
 
 include("../modelo/alumno.php");
 include("../modelo/materia.php");
+include('../modelo/horario.php');
 $datos = listarAlu( $id);
 $materias = json_encode(listarMateriasAlu($id));
+$horarios = listarTodosHorario();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,6 +94,7 @@ $materias = json_encode(listarMateriasAlu($id));
 <script src="../css/bootstrap/js/bootstrap.js"></script>
 <script>
     window.localStorage.setItem("materias",JSON.stringify(<?php echo $materias ?>));
+    window.localStorage.setItem("horarios",JSON.stringify(<?php echo json_encode($horarios) ?>));
 </script>
 <script src="../js/modificar.js"></script>
 </body>

@@ -1,5 +1,5 @@
 <?php
-include('../modelo/horario.php');
+include ('../modelo/horario.php');
 $horarios = listarTodosHorario();
 ?>
 
@@ -75,20 +75,7 @@ $horarios = listarTodosHorario();
 </select>
 </div>
 <h3>Materias</h3>
-<div id="cuatrimestre">
-<div class="form-check">
-  <input onclick="cambiarCalendario(event)" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-  Primer Cuatrimestre
-  </label>r
-</div>
-<div class="form-check">
-  <input onclick="cambiarCalendario(event)" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-  <label class="form-check-label" for="flexRadioDefault2">
-   Segundo Cuatrimestre
-  </label>
-  </div>
-</div><br><br>
+<br>
 <div id="cursoPornivel">
 
 </div>
