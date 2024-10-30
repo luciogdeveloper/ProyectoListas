@@ -22,7 +22,7 @@ $materias = listarMateriasAlu($id);
     <br class="ocultar_impresion">
 <div class="container">
     <h3 class="ocultar_impresion">Datos del Alumno</h3><br>
-<form action="index.php" method="post "class="ocultar_impresion">
+<form action="index.php" method="post" class="ocultar_impresion">
 <div class="card mb-3" style="max-width: 1500px;">
   <div class="row g-0">
     <div class="col-md-3">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2024 a las 16:05:17
+-- Tiempo de generación: 30-10-2024 a las 19:12:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -59,7 +59,9 @@ INSERT INTO `alumno` (`id_alumno`, `apellido`, `nombre`, `dni`, `mail`, `telefon
 (34, 'Abreu', 'dani', '4343466436', '', '', '4 B'),
 (35, 'Abreu', 'dani', '43434543', '', '', '3 B'),
 (36, 'Mamani', 'Gerson', '43434543', 'gerson@gmail.com', '', '1 A'),
-(37, 'Abreu', 'dani', '43434543', '', '', '4 B');
+(37, 'Abreu', 'dani', '43434543', '', '', '4 B'),
+(38, 'Anderson', 'Andres', '1945465456', '', '', '1 B'),
+(39, 'Rios', 'Dante', '545645645', '', '', '4 A');
 
 -- --------------------------------------------------------
 
@@ -130,42 +132,7 @@ INSERT INTO `cursa` (`id_cursa`, `id_alumno`, `id_materia`) VALUES
 (88, 37, 68),
 (89, 37, 72),
 (97, 18, 2),
-(98, 18, 41),
-(0, 33, 1),
-(0, 33, 3),
-(0, 33, 8),
-(0, 33, 16),
-(0, 32, 1),
-(0, 32, 3),
-(0, 32, 8),
-(0, 32, 18),
-(0, 30, 3),
-(0, 30, 17),
-(0, 30, 20),
-(0, 30, 21),
-(0, 31, 2),
-(0, 31, 3),
-(0, 31, 10),
-(0, 31, 14),
-(0, 31, 21),
-(0, 34, 86),
-(0, 34, 88),
-(0, 34, 90),
-(0, 34, 92),
-(0, 34, 94),
-(0, 34, 96),
-(0, 34, 98),
-(0, 34, 100),
-(0, 34, 102),
-(0, 34, 104),
-(0, 34, 106),
-(0, 34, 108),
-(0, 34, 110),
-(0, 34, 112),
-(0, 34, 114),
-(0, 34, 116),
-(0, 34, 118),
-(0, 34, 120);
+(98, 18, 41);
 
 -- --------------------------------------------------------
 
@@ -463,20 +430,56 @@ INSERT INTO `materia` (`id_materia`, `nombre_materia`, `curso`, `divicion`, `dob
 --
 
 --
+-- Indices de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  ADD PRIMARY KEY (`id_alumno`);
+
+--
+-- Indices de la tabla `cursa`
+--
+ALTER TABLE `cursa`
+  ADD PRIMARY KEY (`id_cursa`);
+
+--
 -- Indices de la tabla `horario`
 --
 ALTER TABLE `horario`
   ADD PRIMARY KEY (`id_horario`);
 
 --
+-- Indices de la tabla `materia`
+--
+ALTER TABLE `materia`
+  ADD PRIMARY KEY (`id_materia`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
+--
+-- AUTO_INCREMENT de la tabla `cursa`
+--
+ALTER TABLE `cursa`
+  MODIFY `id_cursa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT de la tabla `horario`
 --
 ALTER TABLE `horario`
   MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+
+--
+-- AUTO_INCREMENT de la tabla `materia`
+--
+ALTER TABLE `materia`
+  MODIFY `id_materia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

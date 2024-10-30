@@ -46,9 +46,11 @@ selectedModificar.addEventListener("keyup", async function (e) {
   let div = document.querySelector(".row");
   let busqueda = e.target.value;
   let html = ``;
+  console.dir(busqueda);
   for (let i = 0; i < alumnos.length; i++) {
     if (alumnos[i].apellido.toLowerCase().startsWith(busqueda.toLowerCase())) {
 
+      console.dir(alumnos[i].id);
       html += `<div class="card" style="width: 18rem;">
       <img class="card-img-top" src="img/alumno.jpg" alt="Card image cap">
   <div class="card-header">
