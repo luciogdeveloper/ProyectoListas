@@ -17,12 +17,12 @@ $materias = listarMateriasAlu($id);
     <link rel="stylesheet" href="../css/perfil.css">
 </head>
 <body onload="inicio(1)">
-    <br>
-    <a href="../index1.php" class="btn btn-link"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</a>
-    <br>
+    <br class="ocultar_impresion">
+    <a href="../index1.php" class="btn btn-link ocultar_impresion"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Volver al inicio</a>
+    <br class="ocultar_impresion">
 <div class="container">
-    <h3>Datos del Alumno</h3><br>
-<form action="index.php" method="post">
+    <h3 class="ocultar_impresion">Datos del Alumno</h3><br>
+<form action="index.php" method="post "class="ocultar_impresion">
 <div class="card mb-3" style="max-width: 1500px;">
   <div class="row g-0">
     <div class="col-md-3">
@@ -91,7 +91,7 @@ $materias = listarMateriasAlu($id);
 </div>
 
 <div id="horario">
-  <div class="custrimestre">
+  <div class="custrimestre ocultar_impresion">
   <div class="form-check">
   <input onclick="cambiarCalendario(event)" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
@@ -104,8 +104,16 @@ $materias = listarMateriasAlu($id);
    Segundo Cuatrimestre
   </label>
 </div>
+</div>
+  <h3 class="ocultar_impresion">Horarios</h3>
+  <div class="datosAlumno mostrar_impresion">
+  <h5 class="card--text">AÑO: 2025</h5>
+  <div class="datosUnidos">
+  <h5 class="card--text"><?php echo 'Alumno: '. $datos[0]['apellido'].' '. $datos[0]['nombre']; ?></h5>
+  <h5 class="card--text"><?php echo 'DNI: '. $datos[0]['dni']; ?></h5>
   </div>
-  <h3>Horarios</h3>
+  <h5 class="card--text"><?php echo 'Mtriculado en: '. $datos[0]['curso']; ?></h5>
+  </div>
   <table class="table">
   <thead>
   <tr>
@@ -121,7 +129,7 @@ $materias = listarMateriasAlu($id);
   <tbody class="tbody">
   <tr class="17:00 a 17:35">
     <td>3°</td>
-    <td>17:00 a 17:35</td>
+    <td class="hora">17:00 a 17:35</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -130,7 +138,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="17:35 a 18:10">
     <td>2°</td>
-    <td>17:35 a 18:10</td>
+    <td class="hora">17:35 a 18:10</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -139,7 +147,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="18:10 a 18:45">
     <td>1°</td>
-    <td>18:10 a 18:45</td>
+    <td class="hora">18:10 a 18:45</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -148,7 +156,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="18:45 a 19:20">
     <td>1°</td>
-    <td>18:45 a 19:20</td>
+    <td class="hora">18:45 a 19:20</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -157,7 +165,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="19:20 a 19:55">
   <td>2°</td>
-  <td>19:20 a 19:55</td>
+  <td class="hora">19:20 a 19:55</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -166,7 +174,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="20:00 a 20:35">
     <td>3°</td>
-    <td>20:00 a 20:35</td>
+    <td class="hora">20:00 a 20:35</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -175,7 +183,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="20:35 a 21:10">
   <td>4°</td>
-  <td>20:35 a 21:10</td>
+  <td class="hora">20:35 a 21:10</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -184,7 +192,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="21:15 a 21:50">
   <td>5°</td>
-  <td>21:15 a 21:50</td>
+  <td class="hora">21:15 a 21:50</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -193,7 +201,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="21:50 a 22:25">
     <td>6°</td>
-    <td>21:50 a 22:25</td>
+    <td class="hora">21:50 a 22:25</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -202,7 +210,7 @@ $materias = listarMateriasAlu($id);
   </tr>
   <tr class="22:25 a 23:00">
     <td>7°</td>
-    <td>22:25 a 23:00</td>
+    <td class="hora">22:25 a 23:00</td>
     <td class="Lunes"></td>
     <td class="Martes"></td>
     <td class="Miercoles"></td>
@@ -211,7 +219,122 @@ $materias = listarMateriasAlu($id);
   </tr>
   </tbody>
 </table>
-        </div>
+<br>
+<div class="datosAlumno mostrar_impresion">
+  <h5 class="card--text">AÑO: 2025</h5>
+  <div class="datosUnidos">
+  <h5 class="card--text"><?php echo 'Alumno: '. $datos[0]['apellido'].' '. $datos[0]['nombre']; ?></h5>
+  <h5 class="card--text"><?php echo 'DNI: '. $datos[0]['dni']; ?></h5>
+  </div>
+  <h5 class="card--text"><?php echo 'Mtriculado en: '. $datos[0]['curso']; ?></h5>
+  </div>
+
+  <table class="table mostrar_impresion">
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <td></td>
+    <td>Lunes</td>
+    <td>Martes</td>
+    <td>Miercoles</td>
+    <td>Jueves</td>
+    <td>Viernes</td>
+  </tr>
+  </thead>
+  <tbody class="tbody">
+  <tr class="17:00 a 17:35">
+    <td>3°</td>
+    <td class="hora">17:00 a 17:35</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="17:35 a 18:10">
+    <td>2°</td>
+    <td class="hora">17:35 a 18:10</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="18:10 a 18:45">
+    <td>1°</td>
+    <td class="hora">18:10 a 18:45</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="18:45 a 19:20">
+    <td>1°</td>
+    <td class="hora">18:45 a 19:20</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="19:20 a 19:55">
+  <td>2°</td>
+  <td class="hora">19:20 a 19:55</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="20:00 a 20:35">
+    <td>3°</td>
+    <td class="hora">20:00 a 20:35</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="20:35 a 21:10">
+  <td>4°</td>
+  <td class="hora">20:35 a 21:10</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="21:15 a 21:50">
+  <td>5°</td>
+  <td class="hora">21:15 a 21:50</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="21:50 a 22:25">
+    <td>6°</td>
+    <td class="hora">21:50 a 22:25</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  <tr class="22:25 a 23:00">
+    <td>7°</td>
+    <td class="hora">22:25 a 23:00</td>
+    <td class="Lunes"></td>
+    <td class="Martes"></td>
+    <td class="Miercoles"></td>
+    <td class="Jueves"></td>
+    <td class="Viernes"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
 <br>
 
 <script src="../css/bootstrap/js/bootstrap.js"></script>

@@ -13,4 +13,62 @@
    width: 70px;
 }
 
+.mostrar_impresion{
+    display: none;
+}
 
+@media print {
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .container{
+        margin:0;
+    }
+
+    .ocultar_impresion{
+        display: none;
+    }
+
+    .table>:not(caption)>*>* {
+        padding: 0;
+        text-align: center;
+        border-width: var(--bs-border-width);
+    }
+    #horario{
+        margin: 0;
+        padding: 0;
+        width:100%;
+        position: absolute;
+        top: 0;
+    }
+
+    .datosAlumno{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .datosAlumno h5{
+        height: 0.5cm;
+    }
+
+    .datosUnidos{
+        display: flex;
+        width: 19cm;
+    }
+
+    .datosUnidos .card--text{
+        margin-right: 4cm;
+    }
+
+    .table{
+        display: block;
+        margin: 0;
+        width: 20cm;
+    }
+
+    .hora{
+        width: 3cm;
+    }
+}
