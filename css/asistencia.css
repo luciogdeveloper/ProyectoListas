@@ -1,3 +1,6 @@
+.observaciones{
+    text-align: left;
+}
 
 @media print and (orientation: landscape){
     @page {
@@ -72,5 +75,9 @@
     th{
         padding: 0cm;
         margin: 0cm;
+    }
+
+    .filaObservaciones{
+        height: 2.5cm;
     }
 }

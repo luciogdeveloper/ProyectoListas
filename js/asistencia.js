@@ -6,8 +6,6 @@ selectedModificar.addEventListener("change", async function (e) {
   let outputMateria = document.querySelector(".asignatura");
   let outputCol = document.querySelector("#cambioCol");
   let outNivel = document.querySelector("#nivel");
-  console.log(dobleElegido);
-  console.log(typeof(dobleElegido));
  await fetch('http://localhost:80/ProyectoListas/server/peticiones/alumnosMateria.php', {
     method: "POST",
     body: JSON.stringify({
@@ -170,11 +168,11 @@ aux++;
     let cabezera = `<tr>
       <th scope="col" colspan="20">Liceo N° 8 D.E N° 13 Esteban Echeverria</th>
       <th scope="col" colspan="28" id="nivel">Curso: ${json[0].nivel} ${json[0].divicion}</th>
-      <th scope="col" colspan="10">AÑO: 2025 </th>
+      <th scope="col" colspan="9">AÑO: 2025 </th>
     </tr>
     <tr>
       <th scope="col" colspan="35">Asignatura: ${json[0].nombre_materia}<small class="asignatura"></small></th>
-      <th scope="col" colspan="23">Docente: <small></small></th>
+      <th scope="col" colspan="22">Docente: <small></small></th>
     </tr>
     <tr id="cambioCol">
     <th scope="col" colspan="1">#</th>
@@ -184,7 +182,6 @@ aux++;
   <th scope="col" colspan="11" class="mes mes3">Mayo</th>
   <th scope="col" colspan="11" class="mes mes4">Junio</th>
   <th scope="col" colspan="11" class="mes mes5">Julio</th>
-  <th scope="col" colspan="1" class="mes">Obser</th>
     </tr>`;
 
     outCabecera.innerHTML = cabezera;
@@ -247,7 +244,6 @@ aux++;
   <td class="ponerBorde"></td>
   <td class="ponerBorde"></td>
   <td class="ponerBorde">%</td>
-  <td class="ponerBorde"></td>
 </tr>`;
     for (let i = 0; i < json.length; i++) {
         html += `<tr class="fila">
@@ -308,11 +304,10 @@ aux++;
   <td class="ponerBorde"></td>
   <td class="ponerBorde"></td>
   <td class="ponerBorde"></td>
-  <td class="ponerBorde"></td>
 </tr>`;
     }
     let aux = json.length+1;
-    while (aux <= 24) {
+    while (aux <= 20) {
       html += `<tr class="fila">
   <th scope="row">${aux}</th>
   <th class="ponerBorde"></th>
@@ -371,10 +366,12 @@ aux++;
   <td class="ponerBorde"></td>
   <td class="ponerBorde"></td>
   <td class="ponerBorde"></td>
-  <td class="ponerBorde"></td>
 </tr>`;
 aux++;
     }
+    html += `<tr class="filaObservaciones">
+    <th scope="col" colspan="57" class="observaciones">Observaciones</th>
+    </tr>`;
     div.innerHTML = html;
    }
     });
