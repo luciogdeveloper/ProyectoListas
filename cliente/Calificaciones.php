@@ -44,6 +44,7 @@
 
 
   <div class="cabezera">
+    <img class="logoGCBA" src="../img/logoGCBA.jpg" alt="">
     <h5>Gobierno de la Ciudad de Buenos Aires</h5>
     <h5>Ministerio de Educacion</h5>
     <h5 class="planilla">PLANILLA DE CALIFICACIONES</h5>
